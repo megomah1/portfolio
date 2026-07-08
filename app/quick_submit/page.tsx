@@ -1,0 +1,119 @@
+import type { Metadata } from "next";
+import Placeholder from "@/components/Placeholder";
+import StatBlock from "@/components/StatBlock";
+import TodoBanner from "@/components/TodoBanner";
+
+export const metadata: Metadata = {
+  title: "A quicker way to submit images",
+  description:
+    "I led the redesign of the core submission flow for NHS staff: the journey from deciding to capture a clinical image to filing it against a patient record. A 12-step process became six, and adoption reached 90%.",
+};
+
+export default function QuickSubmitPage() {
+  return (
+    <article className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
+      <h1 className="text-4xl font-bold sm:text-5xl">A quicker way to submit images</h1>
+
+      <p className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
+        I led the redesign of the core submission flow for NHS staff: the journey
+        from deciding to capture a clinical image to filing it against a patient
+        record. A 12-step process became six, and adoption reached 90%.
+      </p>
+
+      <div className="mt-10 grid grid-cols-1 gap-6 border-y border-zinc-200 py-8 sm:grid-cols-3 dark:border-zinc-800">
+        <StatBlock value="12→6" label="submission steps" />
+        <StatBlock value="26" unit="min" label="of email workarounds — eliminated" />
+        <StatBlock value="90" unit="%" label="clinician adoption, post-launch" />
+      </div>
+
+      <dl className="mt-8 grid grid-cols-1 gap-6 text-sm sm:grid-cols-3">
+        <div>
+          <dt className="font-mono uppercase tracking-wide text-zinc-400">Discipline</dt>
+          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">UX, UI · Research</dd>
+        </div>
+        <div>
+          <dt className="font-mono uppercase tracking-wide text-zinc-400">Reading time</dt>
+          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">3 minutes</dd>
+        </div>
+        <div>
+          <dt className="font-mono uppercase tracking-wide text-zinc-400">Team</dt>
+          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">
+            1 designer (me), 1 product manager, 1 software developer
+          </dd>
+        </div>
+      </dl>
+
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold">Business need</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p>
+            The existing flow wasn&apos;t being used. Clinicians were avoiding
+            in-app submission entirely - one trust told us staff were spending 26
+            minutes emailing images to themselves and uploading them manually
+            when they got back to wifi.
+          </p>
+          <p>
+            When we looked at the flow, the reason was clear. Before a nurse
+            could take a single photo, they had to complete a sequence of
+            administrative steps: find the patient, choose a folder, add a
+            submission, give consent - and only then capture the image. 12
+            steps in total, with search on top of that.
+          </p>
+          <p>The flow had been built around the system&apos;s logic, not the user&apos;s reality.</p>
+        </div>
+      </section>
+
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold">Research</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p>
+            The people using this product most were community nurses and ward
+            staff - clinicians in time-pressured, often hands-on situations. A
+            district nurse might have 30 minutes with a patient. A ward nurse
+            might be mid-dressing change or chatting to patient.
+          </p>
+          <p>
+            What became clear from speaking to users was that the
+            administrative steps weren&apos;t the problem - consent, patient
+            selection, and folder routing all matter. The problem was the
+            order. We were asking clinicians to do the hardest cognitive work
+            first, at the exact moment they needed to act quickly.
+          </p>
+        </div>
+
+        <div className="mt-8">
+          <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+            Before · 9 screen, 16 steps - churning at screen 3
+          </span>
+          <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+            The moment of action is not until screen 6, the churn is happening
+            at screen 3 as they have to choose or create a folder while with
+            patient.
+          </p>
+
+          <div className="mt-6 flex gap-4 overflow-x-auto pb-2">
+            {Array.from({ length: 9 }, (_, i) => i + 1).map((n) => (
+              <Placeholder
+                key={n}
+                label={`Isla app "before" flow — screen ${n} of 9`}
+                aspect="aspect-[9/19]"
+                className="w-32 shrink-0"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-14">
+        <TodoBanner>
+          The live page continues past this point (likely an &quot;after&quot;
+          redesign comparison, outcome/impact detail, and reflection/learnings
+          sections) but I couldn&apos;t fetch it — this environment&apos;s network
+          policy blocks all external domains, including framer.website and
+          framerusercontent.com. Please paste the remaining copy or send
+          screenshots of the rest of this page so I can fill it in verbatim.
+        </TodoBanner>
+      </section>
+    </article>
+  );
+}
