@@ -57,30 +57,30 @@ const decisions = [
 export default function VocalynxPage() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-      <h1 className="text-4xl font-bold sm:text-5xl">
+      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
         Designing a tool to <em>find</em> the voice before it breaks.
       </h1>
 
-      <dl className="mt-10 grid grid-cols-1 gap-6 border-y border-zinc-200 py-8 text-sm sm:grid-cols-3 dark:border-zinc-800">
+      <dl className="mt-10 grid grid-cols-1 gap-6 border-y border-line py-8 text-sm sm:grid-cols-3">
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Discipline</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Discipline</dt>
+          <dd className="mt-1 italic text-ink/80">
             Product · Industrial · Research
           </dd>
         </div>
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Reading time</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">3 minutes</dd>
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Reading time</dt>
+          <dd className="mt-1 italic text-ink/80">3 minutes</dd>
         </div>
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Context</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Context</dt>
+          <dd className="mt-1 italic text-ink/80">
             University research → Founder
           </dd>
         </div>
       </dl>
 
-      <p className="mt-8 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
+      <p className="mt-8 text-lg leading-relaxed text-ink-2">
         Vocalynx is a portable phonation device and companion app that helps
         singers, performers and post-surgical patients rebuild vocal strength,
         without the plastic straws, the guesswork, or the silence between
@@ -98,25 +98,25 @@ export default function VocalynxPage() {
         />
       </div>
 
-      <section className="mt-14 border-t border-zinc-200 pt-12 dark:border-zinc-800">
-        <h2 className="text-2xl font-bold">Challenge</h2>
-        <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">Challenge</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
           People with vocal injuries have no way of knowing if they&apos;re
           doing their therapy exercises correctly unless they&apos;re with a
           trained professional
         </p>
-        <ul className="mt-4 list-disc space-y-2 pl-6 leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <ul className="mt-4 list-disc space-y-2 pl-6 leading-relaxed text-ink/80">
           <li>No visual feedback</li>
           <li>Exercises are difficult, discouraging and loud</li>
           <li>Shame and embarrassment associated with vocal exercises</li>
         </ul>
       </section>
 
-      <section className="mt-14 border-t border-zinc-200 pt-12 dark:border-zinc-800">
-        <h2 className="text-2xl font-bold">Research</h2>
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">Research</h2>
         <div className="mt-6 grid grid-cols-1 items-start gap-6 sm:grid-cols-2">
-          <p className="text-3xl font-bold sm:text-4xl">What the evidence said</p>
-          <p className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p className="font-display text-3xl font-semibold sm:text-4xl">What the evidence said</p>
+          <p className="leading-relaxed text-ink/80">
             I spoke to Speech &amp; Language Therapists, ran a survey of{" "}
             <strong>58 voice-users</strong> (singers, teachers, broadcasters),
             and benchmarked the small market of clinical phonation tools. Four
@@ -124,11 +124,11 @@ export default function VocalynxPage() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-zinc-200 bg-zinc-200 sm:grid-cols-2 dark:border-zinc-800 dark:bg-zinc-800">
+        <div className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
           {insights.map((insight, i) => (
-            <div key={i} className="bg-white p-6 dark:bg-black">
+            <div key={i} className="bg-paper p-6">
               <h3 className="text-lg font-semibold">{insight.heading}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              <p className="mt-3 text-sm leading-relaxed text-ink-2">
                 {insight.body}
               </p>
             </div>
@@ -136,9 +136,9 @@ export default function VocalynxPage() {
         </div>
       </section>
 
-      <section className="mt-14 border-t border-zinc-200 pt-12 dark:border-zinc-800">
-        <h2 className="text-2xl font-bold">The design direction</h2>
-        <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">The design direction</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
           Each decision was anchored to a clinical insight, and checked against
           manufacturing feasibility for MVP.
         </p>
@@ -147,12 +147,12 @@ export default function VocalynxPage() {
           {decisions.map((decision) => (
             <div key={decision.number} className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-8">
               <div>
-                <p className="font-mono text-sm text-zinc-500">{decision.number}</p>
-                <h3 className="mt-1 text-2xl font-semibold text-teal-900 dark:text-teal-300">
+                <p className="font-mono text-sm text-ink-2">{decision.number}</p>
+                <h3 className="mt-1 text-2xl font-semibold text-accent">
                   {decision.heading}
                 </h3>
               </div>
-              <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              <p className="text-sm leading-relaxed text-ink-2">
                 {decision.body}
               </p>
             </div>
@@ -160,9 +160,9 @@ export default function VocalynxPage() {
         </div>
       </section>
 
-      <section className="mt-14 border-t border-zinc-200 pt-12 dark:border-zinc-800">
-        <h2 className="text-2xl font-bold">The solution</h2>
-        <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">The solution</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
           The companion app pairs with the device: an aperture guide for
           warm-ups, one-tap voice samples, and a profile that keeps the
           therapy prescription, progress reports and reminders in one place.
@@ -175,9 +175,9 @@ export default function VocalynxPage() {
         </div>
       </section>
 
-      <section className="mt-14 border-t border-zinc-200 pt-12 dark:border-zinc-800">
-        <h2 className="text-2xl font-bold">Outcome and solution</h2>
-        <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">Outcome and solution</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
           Designing the hardware and the app together meant every interface
           decision had a physical constraint behind it — the 7 mm aperture, the
           single sealed unit, the hum that stands in for data. The lesson that

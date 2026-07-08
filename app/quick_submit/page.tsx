@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 export default function QuickSubmitPage() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-      <h1 className="text-4xl font-bold sm:text-5xl">A quicker way to submit images</h1>
+      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">A quicker way to submit images</h1>
 
-      <p className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
+      <p className="mt-6 text-lg leading-relaxed text-ink-2">
         I led the redesign of the core submission flow for NHS staff: the journey
         from deciding to capture a clinical image to filing it against a patient
         record. A 12-step process became six, and adoption reached 90%.
       </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 border-y border-zinc-200 py-8 sm:grid-cols-3 dark:border-zinc-800">
+      <div className="mt-10 grid grid-cols-1 gap-6 border-y border-line py-8 sm:grid-cols-3">
         <StatBlock value="12→6" label="submission steps" />
         <StatBlock value="26" unit="min" label="of email workarounds — eliminated" />
         <StatBlock value="90" unit="%" label="clinician adoption, post-launch" />
@@ -28,24 +28,24 @@ export default function QuickSubmitPage() {
 
       <dl className="mt-8 grid grid-cols-1 gap-6 text-sm sm:grid-cols-3">
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Discipline</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">UX, UI · Research</dd>
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Discipline</dt>
+          <dd className="mt-1 italic text-ink/80">UX, UI · Research</dd>
         </div>
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Reading time</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">3 minutes</dd>
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Reading time</dt>
+          <dd className="mt-1 italic text-ink/80">3 minutes</dd>
         </div>
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Team</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Team</dt>
+          <dd className="mt-1 italic text-ink/80">
             1 designer (me), 1 product manager, 1 software developer
           </dd>
         </div>
       </dl>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Business need</h2>
-        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <h2 className="text-2xl font-semibold">Business need</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
             The existing flow wasn&apos;t being used. Clinicians were avoiding
             in-app submission entirely - one trust told us staff were spending 26
@@ -64,8 +64,8 @@ export default function QuickSubmitPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Research</h2>
-        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <h2 className="text-2xl font-semibold">Research</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
             The people using this product most were community nurses and ward
             staff - clinicians in time-pressured, often hands-on situations. A
@@ -82,10 +82,10 @@ export default function QuickSubmitPage() {
         </div>
 
         <div className="mt-8">
-          <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+          <span className="inline-flex items-center rounded-full bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-2">
             Before · 9 screen, 16 steps - churning at screen 3
           </span>
-          <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p className="mt-4 leading-relaxed text-ink/80">
             The moment of action is not until screen 6, the churn is happening
             at screen 3 as they have to choose or create a folder while with
             patient.
@@ -104,15 +104,15 @@ export default function QuickSubmitPage() {
         </div>
       </section>
 
-      <blockquote className="mt-16 border-y border-zinc-200 py-10 text-center text-xl font-medium leading-relaxed sm:text-2xl dark:border-zinc-800">
+      <blockquote className="mt-16 border-y border-line py-10 text-center text-xl font-medium leading-relaxed sm:text-2xl">
         The admin steps weren&apos;t the problem — the{" "}
-        <span className="text-orange-700 dark:text-orange-400">order</span> was. So I
+        <span className="text-sienna">order</span> was. So I
         flipped the flow: <strong>capture first, admin after.</strong>
       </blockquote>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Concept</h2>
-        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <h2 className="text-2xl font-semibold">Concept</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
             Rather than rearranging the existing steps, I flipped the entire
             flow. The primary action became capture first, admin after so
@@ -135,10 +135,10 @@ export default function QuickSubmitPage() {
         </div>
 
         <div className="mt-8">
-          <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+          <span className="inline-flex items-center rounded-full bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-2">
             After · 6 steps - capture first
           </span>
-          <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p className="mt-4 leading-relaxed text-ink/80">
             A large submit button now sits as the dominant action. No friction
             between deciding to capture and capturing. The clinical moment is
             secured first; the cognitive load is saved to after
@@ -158,30 +158,30 @@ export default function QuickSubmitPage() {
                   label={`Isla app "after" flow — ${label}`}
                   aspect="aspect-[9/19]"
                 />
-                <figcaption className="mt-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+                <figcaption className="mt-2 text-xs font-medium text-ink-2">
                   {label}
                 </figcaption>
               </figure>
             ))}
           </div>
-          <p className="mt-1 font-mono text-xs text-orange-700 dark:text-orange-400">
+          <p className="mt-1 font-mono text-xs text-sienna">
             01 — the dominant action, first thing you see
           </p>
         </div>
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Outcome</h2>
+        <h2 className="text-2xl font-semibold">Outcome</h2>
         <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-[auto_1fr]">
           <div>
-            <p className="text-6xl font-bold text-emerald-800 dark:text-emerald-400">
+            <p className="font-display text-6xl font-semibold text-accent">
               90<span className="text-3xl">%</span>
             </p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-zinc-500">
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-ink-2">
               Adoption
             </p>
           </div>
-          <p className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p className="leading-relaxed text-ink/80">
             The redesign worked because it started from an honest observation
             about when and where clinicians actually use the product — and was
             willing to reverse an assumption that had been baked into the

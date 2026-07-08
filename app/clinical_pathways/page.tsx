@@ -11,35 +11,35 @@ export const metadata: Metadata = {
 export default function ClinicalPathwaysPage() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-      <h1 className="text-4xl font-bold sm:text-5xl">Visualising Clinical Pathway Data</h1>
-      <p className="mt-4 text-xl italic text-zinc-500 dark:text-zinc-400">
+      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Visualising Clinical Pathway Data</h1>
+      <p className="mt-4 text-xl italic text-ink-2">
         Making complex care logic legible, for the right audience
       </p>
 
-      <dl className="mt-10 grid grid-cols-2 gap-6 border-y border-zinc-200 py-8 text-sm sm:grid-cols-4 dark:border-zinc-800">
+      <dl className="mt-10 grid grid-cols-2 gap-6 border-y border-line py-8 text-sm sm:grid-cols-4">
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Discipline</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">UX, UI · Research</dd>
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Discipline</dt>
+          <dd className="mt-1 italic text-ink/80">UX, UI · Research</dd>
         </div>
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Reading time</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">4 minutes</dd>
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Reading time</dt>
+          <dd className="mt-1 italic text-ink/80">4 minutes</dd>
         </div>
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Timeline</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">6 weeks</dd>
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Timeline</dt>
+          <dd className="mt-1 italic text-ink/80">6 weeks</dd>
         </div>
         <div>
-          <dt className="font-mono uppercase tracking-wide text-zinc-400">Team</dt>
-          <dd className="mt-1 italic text-zinc-700 dark:text-zinc-300">
+          <dt className="font-mono uppercase tracking-wide text-ink-3">Team</dt>
+          <dd className="mt-1 italic text-ink/80">
             1 designer (me), 1 product manager, 1 software developer
           </dd>
         </div>
       </dl>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold">Summary</h2>
-        <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <h2 className="text-2xl font-semibold">Summary</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
           Designed a visual pathway builder that made our backend architecture
           configurable and demonstrable. Shipped in 6 weeks, supported a
           national NHS contract win, and built the commercial case for a full
@@ -54,8 +54,8 @@ export default function ClinicalPathwaysPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Business need</h2>
-        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <h2 className="text-2xl font-semibold">Business need</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
             Our healthcare platform handles complex patient journeys behind the
             scenes. It sent messages, routes patients down different paths
@@ -72,8 +72,8 @@ export default function ClinicalPathwaysPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Challenge</h2>
-        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <h2 className="text-2xl font-semibold">Challenge</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
             We had six weeks. Whatever we shipped had to be credible enough to
             use in front of a national NHS audience. The question I was trying
@@ -93,14 +93,14 @@ export default function ClinicalPathwaysPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Research</h2>
+        <h2 className="text-2xl font-semibold">Research</h2>
 
         <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
           <Placeholder
             label="Research synthesis boards — pathway notes and clustered sticky notes from clinical lead sessions"
             aspect="aspect-[4/3]"
           />
-          <div className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <div className="leading-relaxed text-ink/80">
             <p>I ran sessions with clinical leads in 2 NHS trusts.</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
@@ -117,7 +117,7 @@ export default function ClinicalPathwaysPage() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
-          <div className="leading-relaxed text-zinc-700 dark:text-zinc-300 sm:order-1">
+          <div className="leading-relaxed text-ink/80 sm:order-1">
             <p>Understanding the 2 user types needs.</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
@@ -139,28 +139,28 @@ export default function ClinicalPathwaysPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Principles</h2>
+        <h2 className="text-2xl font-semibold">Principles</h2>
         <div className="mt-6 space-y-8">
           <div>
-            <h3 className="font-mono text-sm text-zinc-500">01. What to show, what to hide</h3>
-            <p className="mt-2 leading-relaxed text-zinc-700 dark:text-zinc-300">
+            <h3 className="font-mono text-sm text-ink-2">01. What to show, what to hide</h3>
+            <p className="mt-2 leading-relaxed text-ink/80">
               Surface tags and automation logic, clinically more safe to show
               the why behind what is happening
             </p>
           </div>
           <div>
-            <h3 className="font-mono text-sm text-zinc-500">02. One language for two audiences</h3>
-            <p className="mt-2 leading-relaxed text-zinc-700 dark:text-zinc-300">
+            <h3 className="font-mono text-sm text-ink-2">02. One language for two audiences</h3>
+            <p className="mt-2 leading-relaxed text-ink/80">
               Clinical leads read for safety, operational buyers for control.
               Same canvas, two reading orders: colour-coded states for
               clinicians, branch counts for operations.
             </p>
           </div>
           <div>
-            <h3 className="font-mono text-sm text-zinc-500">
+            <h3 className="font-mono text-sm text-ink-2">
               03. Design within the data, and ahead of it
             </h3>
-            <p className="mt-2 leading-relaxed text-zinc-700 dark:text-zinc-300">
+            <p className="mt-2 leading-relaxed text-ink/80">
               No good states, no fictional flexibility. The canvas only renders
               what the data model can actually express. But every interaction
               was sketched twice. Once for the 3-branch MVP we were shipping,
@@ -177,15 +177,15 @@ export default function ClinicalPathwaysPage() {
           />
         </div>
 
-        <div className="mt-8 space-y-4 text-center italic text-zinc-600 dark:text-zinc-400">
+        <div className="mt-8 space-y-4 text-center italic text-ink-2">
           <p>&ldquo;We need to see the automated tags that are being applied and why&rdquo;</p>
           <p>&ldquo;Flexible canvas would require too much technical implementation for MVP&rdquo;</p>
         </div>
       </section>
 
-      <section className="mt-14 border-t border-zinc-200 pt-12 dark:border-zinc-800">
-        <h2 className="text-2xl font-bold">What shipped</h2>
-        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">What shipped</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
             The canvas surfaces three things by default: where the patient
             enters the journey, what happens at each touch point, and the
@@ -208,9 +208,9 @@ export default function ClinicalPathwaysPage() {
         </div>
       </section>
 
-      <section className="mt-14 border-t border-zinc-200 pt-12 dark:border-zinc-800">
-        <h2 className="text-2xl font-bold">Impact</h2>
-        <ul className="mt-4 list-disc space-y-2 pl-6 leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">Impact</h2>
+        <ul className="mt-4 list-disc space-y-2 pl-6 leading-relaxed text-ink/80">
           <li>Delivery and sales walked clients through live pathways in real time for the first time.</li>
           <li>
             The platform was selected for a national NHS project shortly after

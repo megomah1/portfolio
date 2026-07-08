@@ -1,8 +1,8 @@
 export default function TodoBanner({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-dashed border-amber-400 bg-amber-50 p-6 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-200">
-      <p className="font-semibold">TODO — content not available</p>
-      <p className="mt-1">{children}</p>
+    <div className="rounded-xl border border-dashed border-sienna/40 bg-sienna-tint p-6 text-sm text-ink">
+      <p className="font-semibold text-sienna">TODO — content not available</p>
+      <p className="mt-1 leading-relaxed text-ink-2">{children}</p>
     </div>
   );
 }

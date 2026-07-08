@@ -1,34 +1,101 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Semantic variables switched by the `.dark` class on <html>;
+   components only ever reference the semantic names below.
+--------------------------------------------------------------------------- */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --paper: #faf6ef;
+  --surface: #f4eee3;
+  --line: #e6ded0;
+
+  --ink: #292420;
+  --ink-2: #6e6558;
+  --ink-3: #9c9184;
+
+  --accent: #196c5d;
+  --accent-strong: #0f5548;
+  --accent-tint: #e4efe9;
+
+  --sienna: #b64a26;
+  --sienna-tint: #f7e6dc;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --paper: #211c17;
+  --surface: #2a241d;
+  --line: #3b342b;
+
+  --ink: #ede6db;
+  --ink-2: #ada192;
+  --ink-3: #837868;
+
+  --accent: #5fb39d;
+  --accent-strong: #7cc7b3;
+  --accent-tint: #22382f;
+
+  --sienna: #d98157;
+  --sienna-tint: #3b2a20;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-tint: var(--accent-tint);
+  --color-sienna: var(--sienna);
+  --color-sienna-tint: var(--sienna-tint);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+h1,
+h2,
+h3,
+blockquote {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Motion
+--------------------------------------------------------------------------- */
 
 @keyframes rise {
   from {
     opacity: 0;
-    translate: 0 20px;
+    translate: 0 16px;
   }
   to {
     opacity: 1;
@@ -57,11 +124,11 @@ body {
 @keyframes settle {
   from {
     opacity: 0;
-    transform: translateY(-24px) rotate(7deg) scale(0.97);
+    transform: translateY(-20px) rotate(6deg) scale(0.98);
   }
   60% {
     opacity: 1;
-    transform: translateY(4px) rotate(0.5deg) scale(1);
+    transform: translateY(3px) rotate(0.5deg) scale(1);
   }
   to {
     opacity: 1;
@@ -72,23 +139,23 @@ body {
 /* fill-mode backwards: hidden during the delay, then releases control back to
    the element's own transform classes so hover transitions keep working */
 .anim-rise {
-  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 .anim-settle {
-  animation: settle 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s backwards;
+  animation: settle 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s backwards;
 }
 
 .anim-wave {
   display: inline-block;
   transform-origin: 70% 70%;
-  animation: wave 1.8s ease-in-out 0.9s 1;
+  animation: wave 1.6s ease-in-out 0.7s 1;
 }
 
-.anim-delay-1 { animation-delay: 0.1s; }
-.anim-delay-2 { animation-delay: 0.25s; }
-.anim-delay-3 { animation-delay: 0.4s; }
-.anim-delay-4 { animation-delay: 0.55s; }
+.anim-delay-1 { animation-delay: 0.08s; }
+.anim-delay-2 { animation-delay: 0.18s; }
+.anim-delay-3 { animation-delay: 0.28s; }
+.anim-delay-4 { animation-delay: 0.38s; }
 
 @media (prefers-reduced-motion: reduce) {
   .anim-rise,

@@ -3,39 +3,60 @@
 import Link from "next/link";
 import { useState } from "react";
 import { navLinks, site } from "@/lib/site";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-black/90">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
       <nav
         aria-label="Primary"
         className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4"
       >
-        <Link href="/" className="flex items-center gap-2 font-semibold text-zinc-900 dark:text-zinc-50">
-          <span
-            aria-hidden
-            className="inline-block h-6 w-6 shrink-0 rounded-sm bg-gradient-to-br from-zinc-700 to-zinc-900 dark:from-zinc-300 dark:to-zinc-500"
-          />
+        <Link
+          href="/"
+          className="font-display text-lg font-semibold tracking-tight text-ink transition-colors duration-200 hover:text-accent"
+        >
           {site.name}
         </Link>
 
-        <button
-          type="button"
-          className="text-sm font-medium text-zinc-700 sm:hidden dark:text-zinc-300"
-          aria-expanded={open}
-          aria-controls="primary-nav-links"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
+        <div className="flex items-center gap-2 sm:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="rounded-full px-3 py-1.5 text-sm font-medium text-ink-2 transition-colors duration-200 hover:bg-surface hover:text-ink"
+            aria-expanded={open}
+            aria-controls="primary-nav-links"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? "Close" : "Menu"}
+          </button>
+        </div>
+
+        <div className="hidden items-center gap-8 sm:flex">
+          <ul id="primary-nav-links-desktop" className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  className="text-sm font-medium text-ink-2 underline-offset-4 transition-colors duration-200 hover:text-accent hover:underline"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+        </div>
 
         <ul
           id="primary-nav-links"
           className={`${
             open ? "flex" : "hidden"
-          } absolute left-0 right-0 top-full flex-col gap-4 border-b border-zinc-200 bg-white px-6 py-4 sm:static sm:flex sm:flex-row sm:items-center sm:gap-8 sm:border-none sm:bg-transparent sm:p-0 dark:border-zinc-800 dark:bg-black`}
+          } absolute left-0 right-0 top-full flex-col gap-4 border-b border-line bg-paper px-6 py-5 sm:!hidden`}
         >
           {navLinks.map((link) => (
             <li key={link.label}>
@@ -43,7 +64,7 @@ export default function Nav() {
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="text-sm font-medium text-zinc-700 transition-colors hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+                className="text-sm font-medium text-ink-2 transition-colors duration-200 hover:text-accent"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

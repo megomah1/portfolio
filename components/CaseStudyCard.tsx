@@ -7,14 +7,18 @@ export default function CaseStudyCard({ slug, title, summary, tags, imagePlaceho
   return (
     <Link
       href={`/${slug}`}
-      className="group grid grid-cols-1 overflow-hidden rounded-2xl border border-zinc-200 transition-colors hover:border-zinc-400 sm:grid-cols-2 dark:border-zinc-800 dark:hover:border-zinc-600"
+      className="group grid grid-cols-1 overflow-hidden rounded-xl border border-line bg-paper transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(41,36,32,0.07)] motion-reduce:transform-none sm:grid-cols-2"
     >
-      <Placeholder label={imagePlaceholder} aspect="aspect-[4/3]" className="rounded-none border-none bg-zinc-100 dark:bg-zinc-900" />
+      <Placeholder
+        label={imagePlaceholder}
+        aspect="aspect-[4/3]"
+        className="rounded-none border-none bg-surface"
+      />
       <div className="flex flex-col justify-center gap-3 p-8">
-        <h3 className="text-2xl font-semibold text-zinc-900 group-hover:underline dark:text-zinc-50">
+        <h3 className="font-display text-2xl font-semibold text-ink transition-colors duration-200 group-hover:text-accent">
           {title}
         </h3>
-        <p className="text-zinc-500 dark:text-zinc-400">{summary}</p>
+        <p className="leading-relaxed text-ink-2">{summary}</p>
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-1">
             {tags.map((tag) => (

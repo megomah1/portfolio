@@ -3,14 +3,15 @@ import Placeholder from "@/components/Placeholder";
 import TagPill from "@/components/TagPill";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import Reveal from "@/components/Reveal";
+import HeroRule from "@/components/HeroRule";
 import { caseStudies } from "@/lib/site";
 
 export default function Home() {
   return (
     <>
-      <section className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 px-6 py-20 sm:py-28 lg:grid-cols-[3fr_2fr]">
+      <section className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-20 sm:pt-28 lg:grid-cols-[3fr_2fr]">
         <div>
-          <p className="anim-rise text-xl leading-relaxed text-zinc-600 sm:text-2xl dark:text-zinc-300">
+          <p className="anim-rise text-xl leading-relaxed text-ink-2 sm:text-2xl">
             <span className="anim-wave" aria-hidden>
               👋
             </span>{" "}
@@ -28,10 +29,10 @@ export default function Home() {
           </div>
 
           <div className="anim-rise anim-delay-3 mt-10">
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">Just stopping by?</p>
+            <p className="text-sm text-ink-2">Just stopping by?</p>
             <Link
               href="/quick_submit"
-              className="mt-3 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+              className="mt-3 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-colors duration-200 hover:bg-accent-strong"
             >
               View spotlight project
               <span aria-hidden>→</span>
@@ -40,26 +41,30 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto w-full max-w-xs">
-          <p className="anim-rise anim-delay-4 mb-3 text-right text-sm italic text-zinc-500 dark:text-zinc-400">
+          <p className="anim-rise anim-delay-4 mb-3 text-right text-sm italic text-ink-3">
             Select to learn more about me
           </p>
-          <div className="anim-settle rotate-2 rounded-md border border-zinc-200 bg-white p-3 pb-6 shadow-md transition-transform duration-300 hover:rotate-0 dark:border-zinc-800 dark:bg-zinc-950">
+          <div className="anim-settle rotate-2 rounded-xl border border-line bg-surface p-3 pb-6 shadow-[0_2px_12px_rgba(41,36,32,0.08)] transition-transform duration-300 hover:rotate-0">
             <Placeholder label="Portrait photo of Megan O'Mahony" aspect="aspect-[4/5]" />
-            <p className="mt-3 text-center font-serif italic text-zinc-700 dark:text-zinc-300">
+            <p className="mt-3 text-center font-display italic text-ink-2">
               - Product Designer -
             </p>
           </div>
         </div>
       </section>
 
-      <section id="case-studies" className="mx-auto max-w-5xl scroll-mt-20 px-6 pb-24">
+      <div className="mx-auto max-w-5xl px-6">
+        <HeroRule />
+      </div>
+
+      <section id="case-studies" className="mx-auto max-w-5xl scroll-mt-20 px-6 pb-24 pt-16">
         <Reveal>
-          <h2 className="flex items-center gap-3 text-3xl font-bold sm:text-4xl">
+          <h2 className="flex items-center gap-3 text-3xl font-semibold sm:text-4xl">
             4 selected case studies <span aria-hidden>↓</span>
           </h2>
         </Reveal>
 
-        <div className="mt-10 flex flex-col gap-6">
+        <div className="mt-10 flex flex-col gap-8">
           {caseStudies.map((cs) => (
             <Reveal key={cs.slug}>
               <CaseStudyCard {...cs} />
@@ -70,14 +75,14 @@ export default function Home() {
 
       <section className="mx-auto max-w-5xl px-6 pb-24">
         <Reveal>
-          <div className="rounded-2xl border border-zinc-200 p-10 text-center dark:border-zinc-800">
-            <p className="text-lg text-zinc-600 dark:text-zinc-300">
+          <div className="rounded-xl border border-line bg-surface p-10 text-center">
+            <p className="text-lg leading-relaxed text-ink-2">
               I&apos;m currently open to new opportunities, product design, creative,
               and people-facing roles. Always happy to have a conversation.
             </p>
             <Link
               href="/cv"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-colors duration-200 hover:bg-accent-strong"
             >
               My CV
               <span aria-hidden>→</span>

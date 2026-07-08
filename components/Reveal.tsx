@@ -34,10 +34,10 @@ export default function Reveal({
     <div
       ref={ref}
       style={{ transitionDelay: shown ? `${delay}ms` : undefined }}
-      className={`motion-safe:transition-all motion-safe:duration-700 motion-safe:ease-out ${
+      className={`motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out ${
         shown
           ? "motion-safe:translate-y-0 motion-safe:opacity-100"
-          : "motion-safe:translate-y-6 motion-safe:opacity-0"
+          : "motion-safe:translate-y-4 motion-safe:opacity-0"
       } ${className}`}
     >
       {children}

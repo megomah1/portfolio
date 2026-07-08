@@ -1,6 +1,6 @@
 export default function TagPill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+    <span className="inline-flex items-center rounded-full bg-accent-tint px-3 py-1 text-sm font-medium text-accent">
       {children}
     </span>
   );

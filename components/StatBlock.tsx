@@ -8,12 +8,12 @@ export default function StatBlock({
   label: string;
 }) {
   return (
-    <div className="border-t border-zinc-200 py-6 first:border-t-0 sm:border-l sm:border-t-0 sm:py-0 sm:pl-8 sm:first:border-l-0 sm:first:pl-0">
-      <p className="text-4xl font-bold text-zinc-900 dark:text-zinc-50">
+    <div className="border-t border-line py-6 first:border-t-0 sm:border-l sm:border-t-0 sm:py-0 sm:pl-8 sm:first:border-l-0 sm:first:pl-0">
+      <p className="font-display text-4xl font-semibold text-ink">
         {value}
-        {unit && <span className="ml-1 text-lg font-mono font-normal text-zinc-500 dark:text-zinc-400">{unit}</span>}
+        {unit && <span className="ml-1 font-mono text-lg font-normal text-ink-2">{unit}</span>}
       </p>
-      <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">{label}</p>
+      <p className="mt-2 text-sm text-ink-2">{label}</p>
     </div>
   );
 }

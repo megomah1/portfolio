@@ -11,15 +11,15 @@ export const metadata: Metadata = {
 export default function CvPage() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-      <h1 className="text-4xl font-bold sm:text-5xl">Resume</h1>
-      <p className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
+      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Resume</h1>
+      <p className="mt-6 text-lg leading-relaxed text-ink-2">
         {site.role} · London 🇬🇧
       </p>
 
       <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium">
         <Link
           href={`mailto:${site.email}`}
-          className="rounded-full bg-blue-600 px-5 py-2.5 text-white transition-colors hover:bg-blue-700"
+          className="rounded-full bg-accent px-5 py-2.5 text-paper transition-colors hover:bg-accent-strong"
         >
           Email me
         </Link>
@@ -27,7 +27,7 @@ export default function CvPage() {
           href={site.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-zinc-300 px-5 py-2.5 text-zinc-700 transition-colors hover:border-zinc-500 dark:border-zinc-700 dark:text-zinc-300"
+          className="rounded-full border border-line px-5 py-2.5 text-ink/80 transition-colors hover:border-accent hover:text-accent"
         >
           LinkedIn
         </Link>
@@ -35,7 +35,7 @@ export default function CvPage() {
 
       <div className="mt-14 space-y-6">
         <section>
-          <h2 className="text-2xl font-bold">Experience</h2>
+          <h2 className="text-2xl font-semibold">Experience</h2>
           <div className="mt-4">
             <TodoBanner>
               Work history (companies, titles, dates, bullet points) wasn&apos;t
@@ -47,21 +47,21 @@ export default function CvPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold">Education</h2>
+          <h2 className="text-2xl font-semibold">Education</h2>
           <div className="mt-4">
             <TodoBanner>Not fetchable — same network restriction as above.</TodoBanner>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold">Skills</h2>
+          <h2 className="text-2xl font-semibold">Skills</h2>
           <div className="mt-4">
             <TodoBanner>Not fetchable — same network restriction as above.</TodoBanner>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold">Download</h2>
+          <h2 className="text-2xl font-semibold">Download</h2>
           <div className="mt-4">
             <TodoBanner>
               No downloadable CV/resume file URL was available. Once you
