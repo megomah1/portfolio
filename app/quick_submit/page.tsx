@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Placeholder from "@/components/Placeholder";
 import StatBlock from "@/components/StatBlock";
-import TodoBanner from "@/components/TodoBanner";
+import NextProject from "@/components/NextProject";
 
 export const metadata: Metadata = {
   title: "A quicker way to submit images",
@@ -104,16 +104,93 @@ export default function QuickSubmitPage() {
         </div>
       </section>
 
+      <blockquote className="mt-16 border-y border-zinc-200 py-10 text-center text-xl font-medium leading-relaxed sm:text-2xl dark:border-zinc-800">
+        The admin steps weren&apos;t the problem — the{" "}
+        <span className="text-orange-700 dark:text-orange-400">order</span> was. So I
+        flipped the flow: <strong>capture first, admin after.</strong>
+      </blockquote>
+
       <section className="mt-14">
-        <TodoBanner>
-          The live page continues past this point (likely an &quot;after&quot;
-          redesign comparison, outcome/impact detail, and reflection/learnings
-          sections) but I couldn&apos;t fetch it — this environment&apos;s network
-          policy blocks all external domains, including framer.website and
-          framerusercontent.com. Please paste the remaining copy or send
-          screenshots of the rest of this page so I can fill it in verbatim.
-        </TodoBanner>
+        <h2 className="text-2xl font-bold">Concept</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p>
+            Rather than rearranging the existing steps, I flipped the entire
+            flow. The primary action became capture first, admin after so
+            clinicians have more time to care for patients.
+          </p>
+          <p>
+            A Submit button sits as the dominant action on the patient list.
+            Tap it, take the photo, then fill in the details. The clinical
+            moment is secured immediately. Everything else follows once the
+            image is safe.
+          </p>
+          <p>
+            The new flow: capture → review and consent → choose patient →
+            choose folder → uploaded. Six steps, with search only if needed.
+          </p>
+          <p>
+            This was a persuasive design decision. Making capture the path of
+            least resistance meant the right behaviour became the easiest one.
+          </p>
+        </div>
+
+        <div className="mt-8">
+          <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+            After · 6 steps - capture first
+          </span>
+          <p className="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+            A large submit button now sits as the dominant action. No friction
+            between deciding to capture and capturing. The clinical moment is
+            secured first; the cognitive load is saved to after
+          </p>
+
+          <div className="mt-6 flex gap-4 overflow-x-auto pb-2">
+            {[
+              "01 Patient list — Submit",
+              "02 Capture photo",
+              "03 Review items",
+              "04 Choose folder",
+              "05 Confirm consent",
+              "06 Done",
+            ].map((label) => (
+              <figure key={label} className="w-36 shrink-0">
+                <Placeholder
+                  label={`Isla app "after" flow — ${label}`}
+                  aspect="aspect-[9/19]"
+                />
+                <figcaption className="mt-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+                  {label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="mt-1 font-mono text-xs text-orange-700 dark:text-orange-400">
+            01 — the dominant action, first thing you see
+          </p>
+        </div>
       </section>
+
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold">Outcome</h2>
+        <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-[auto_1fr]">
+          <div>
+            <p className="text-6xl font-bold text-emerald-800 dark:text-emerald-400">
+              90<span className="text-3xl">%</span>
+            </p>
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-zinc-500">
+              Adoption
+            </p>
+          </div>
+          <p className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+            The redesign worked because it started from an honest observation
+            about when and where clinicians actually use the product — and was
+            willing to reverse an assumption that had been baked into the
+            original design from the start.
+          </p>
+        </div>
+      </section>
+
+      <NextProject href="/clinical_pathways" title="Visualising Clinical Pathway Data" />
     </article>
   );
 }
