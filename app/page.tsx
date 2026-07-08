@@ -4,6 +4,7 @@ import TagPill from "@/components/TagPill";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import Reveal from "@/components/Reveal";
 import HeroRule from "@/components/HeroRule";
+import Spotlight from "@/components/Spotlight";
 import { caseStudies } from "@/lib/site";
 
 export default function Home() {
@@ -56,6 +57,10 @@ export default function Home() {
       <div className="mx-auto max-w-5xl px-6">
         <HeroRule />
       </div>
+
+      <Reveal>
+        <Spotlight />
+      </Reveal>
 
       <section id="case-studies" className="mx-auto max-w-5xl scroll-mt-20 px-6 pb-24 pt-16">
         <Reveal>
