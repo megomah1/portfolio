@@ -1,7 +1,27 @@
 import type { Metadata } from "next";
-import Placeholder from "@/components/Placeholder";
+import Image from "next/image";
 import StatBlock from "@/components/StatBlock";
 import NextProject from "@/components/NextProject";
+
+const beforeScreens = [
+  { label: "Choose patient", alt: "patient list with search and filters", w: 346, h: 708 },
+  { label: "Choose folder", alt: "folder dropdown open on the patient record", w: 347, h: 709 },
+  { label: "Add button", alt: "patient record with create new folder and submissions list", w: 348, h: 710 },
+  { label: "Consent", alt: "consent confirmation dialog before adding items", w: 347, h: 710 },
+  { label: "Add items", alt: "add photos, videos or files upload screen", w: 348, h: 710 },
+  { label: "Capture photo", alt: "camera view capturing a photo", w: 348, h: 709 },
+  { label: "Upload", alt: "add more photos, videos or files to the record", w: 318, h: 709 },
+  { label: "Uploaded", alt: "success toasts confirming attachments submitted", w: 327, h: 709 },
+];
+
+const afterScreens = [
+  { label: "01 Patient list — Submit", alt: "patient list with a large green Submit button" },
+  { label: "02 Capture photo", alt: "camera view capturing a photo immediately" },
+  { label: "03 Review items", alt: "add submission screen reviewing captured images" },
+  { label: "04 Choose folder", alt: "choose a folder list with Psoriasis folder selected" },
+  { label: "05 Confirm consent", alt: "add submission screen with confirm consent and continue" },
+  { label: "06 Done", alt: "success screen, three items added to the patient's Isla record" },
+];
 
 export const metadata: Metadata = {
   title: "A quicker way to submit images",
@@ -92,13 +112,19 @@ export default function QuickSubmitPage() {
           </p>
 
           <div className="mt-6 flex gap-4 overflow-x-auto pb-2">
-            {Array.from({ length: 9 }, (_, i) => i + 1).map((n) => (
-              <Placeholder
-                key={n}
-                label={`Isla app "before" flow — screen ${n} of 9`}
-                aspect="aspect-[9/19]"
-                className="w-32 shrink-0"
-              />
+            {beforeScreens.map((screen, i) => (
+              <figure key={screen.label} className="w-36 shrink-0">
+                <Image
+                  src={`/quick-submit/before-${i + 1}.png`}
+                  alt={`Isla app before flow, step ${i + 1}: ${screen.label} — ${screen.alt}`}
+                  width={screen.w}
+                  height={screen.h}
+                  className="w-full rounded-lg border border-line bg-surface"
+                />
+                <figcaption className="mt-2 text-xs font-medium text-ink-2">
+                  {i + 1}. {screen.label}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
@@ -145,21 +171,17 @@ export default function QuickSubmitPage() {
           </p>
 
           <div className="mt-6 flex gap-4 overflow-x-auto pb-2">
-            {[
-              "01 Patient list — Submit",
-              "02 Capture photo",
-              "03 Review items",
-              "04 Choose folder",
-              "05 Confirm consent",
-              "06 Done",
-            ].map((label) => (
-              <figure key={label} className="w-36 shrink-0">
-                <Placeholder
-                  label={`Isla app "after" flow — ${label}`}
-                  aspect="aspect-[9/19]"
+            {afterScreens.map((screen, i) => (
+              <figure key={screen.label} className="w-40 shrink-0">
+                <Image
+                  src={`/quick-submit/after-${i + 1}.png`}
+                  alt={`Isla app after flow, step ${i + 1}: ${screen.label} — ${screen.alt}`}
+                  width={476}
+                  height={852}
+                  className="w-full rounded-lg border border-line bg-surface"
                 />
                 <figcaption className="mt-2 text-xs font-medium text-ink-2">
-                  {label}
+                  {screen.label}
                 </figcaption>
               </figure>
             ))}

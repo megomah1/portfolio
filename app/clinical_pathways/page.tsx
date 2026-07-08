@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Placeholder from "@/components/Placeholder";
 import NextProject from "@/components/NextProject";
 
@@ -130,10 +131,12 @@ export default function ClinicalPathwaysPage() {
               </li>
             </ul>
           </div>
-          <Placeholder
-            label="User persona boards — CPA admin, admin triaging, researcher and admin pathway builder profiles"
-            aspect="aspect-[4/3]"
-            className="sm:order-2"
+          <Image
+            src="/clinical-pathways/persona-mapping.png"
+            alt="User persona mapping boards for CFA admin, admin triaging, researcher and admin pathway builder, with app screens and clustered notes for each"
+            width={1800}
+            height={1016}
+            className="rounded-xl border border-line bg-surface sm:order-2"
           />
         </div>
       </section>
