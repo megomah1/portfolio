@@ -5,6 +5,7 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import Reveal from "@/components/Reveal";
 import HeroRule from "@/components/HeroRule";
 import Spotlight from "@/components/Spotlight";
+import References from "@/components/References";
 import { caseStudies } from "@/lib/site";
 
 export default function Home() {
@@ -77,6 +78,10 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <Reveal>
+        <References />
+      </Reveal>
 
       <section className="mx-auto max-w-5xl px-6 pb-24">
         <Reveal>
