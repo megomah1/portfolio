@@ -4,6 +4,8 @@ export const site = {
   email: "megomahony97@gmail.com",
   linkedin: "https://www.linkedin.com/in/megan-omahony/",
   url: "https://portfolio-nextjs-vercel-nxynck.vercel.app",
+  // TODO: replace with the industrial-design site's real Vercel URL after import
+  physicalPortfolio: "https://industrial-design.vercel.app",
 };
 
 export const navLinks = [
@@ -45,12 +47,5 @@ export const caseStudies: CaseStudySummary[] = [
     summary: "Designing a vocal therapy companion for people recovering at home",
     tags: [],
     imagePlaceholder: "Vocalynx app screens and vocal therapy device",
-  },
-  {
-    slug: "transition",
-    title: "Transitions Optical marketing device",
-    summary: "Building a projection display to bring light-adaptive lenses to life",
-    tags: [],
-    imagePlaceholder: "Transitions Optical projection display device on ski helmet and beanie",
   },
 ];

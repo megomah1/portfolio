@@ -186,7 +186,7 @@ export default function VocalynxPage() {
         </p>
       </section>
 
-      <NextProject href="/transition" title="Transitions Optical marketing device" />
+      <NextProject href="/quick_submit" title="A quicker way to submit images" />
     </article>
   );
 }

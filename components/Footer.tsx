@@ -8,6 +8,14 @@ export default function Footer() {
         <p>© 2024–2025 {site.name}</p>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <Link
+            href={site.physicalPortfolio}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-4 transition-colors duration-200 hover:text-accent hover:underline"
+          >
+            Physical portfolio
+          </Link>
+          <Link
             href="/cv"
             className="underline-offset-4 transition-colors duration-200 hover:text-accent hover:underline"
           >

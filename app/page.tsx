@@ -66,7 +66,7 @@ export default function Home() {
       <section id="case-studies" className="mx-auto max-w-5xl scroll-mt-20 px-6 pb-24 pt-16">
         <Reveal>
           <h2 className="flex items-center gap-3 text-3xl font-semibold sm:text-4xl">
-            4 selected case studies <span aria-hidden>↓</span>
+            {caseStudies.length} selected case studies <span aria-hidden>↓</span>
           </h2>
         </Reveal>
 
