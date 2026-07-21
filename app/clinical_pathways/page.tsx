@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Placeholder from "@/components/Placeholder";
 import NextProject from "@/components/NextProject";
 
 export const metadata: Metadata = {
@@ -41,49 +40,43 @@ export default function ClinicalPathwaysPage() {
       <section className="mt-12">
         <h2 className="text-2xl font-semibold">Summary</h2>
         <p className="mt-4 leading-relaxed text-ink/80">
-          Designed a visual pathway builder that made our backend architecture
-          configurable and demonstrable. Shipped in 6 weeks, supported a
-          national NHS contract win, and built the commercial case for a full
-          data-model rebuild.
+          I designed a visual pathway builder that made our backend
+          architecture configurable and demonstrable. It shipped in six weeks,
+          supported a national NHS contract win, and built the commercial case
+          for a full data-model rebuild.
         </p>
-        <div className="mt-8">
-          <Placeholder
-            label="Isla waiting list validation pathway — visual builder UI with event, request and branching pathway cards"
-            aspect="aspect-[16/10]"
-          />
-        </div>
       </section>
 
-      <section className="mt-14">
+      <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Business need</h2>
         <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
             Our healthcare platform handles complex patient journeys behind the
-            scenes. It sent messages, routes patients down different paths
-            based on their answers. But none of this was visible and clients
-            were untrusting of our capabilities.
+            scenes: it sends messages and routes patients down different paths
+            based on their answers. But none of it was visible — and clients
+            didn&apos;t trust what they couldn&apos;t see.
           </p>
           <p>
             Sales teams couldn&apos;t show new clients what they were buying.
             Delivery teams couldn&apos;t walk an existing client through their
             own setup in a meeting.
           </p>
-          <p>The product was doing meaningful work and no one could point to it.</p>
+          <p>The product was doing meaningful work, and no one could point to it.</p>
         </div>
       </section>
 
-      <section className="mt-14">
+      <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Challenge</h2>
         <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
             We had six weeks. Whatever we shipped had to be credible enough to
-            use in front of a national NHS audience. The question I was trying
-            to answer was:{" "}
-            <strong>what is the smallest version that earns trust with our clients.</strong>
+            put in front of a national NHS audience. The question I was trying
+            to answer:{" "}
+            <strong>what&apos;s the smallest version that earns trust with our clients?</strong>
           </p>
           <p>That meant being deliberate about three things:</p>
           <ul className="list-disc space-y-2 pl-6">
-            <li>What to show. What to hide</li>
+            <li>What to show, and what to hide</li>
             <li>
               How to create one visual language that worked for two different
               audiences: clinical leads and operational buyers
@@ -93,7 +86,7 @@ export default function ClinicalPathwaysPage() {
         </div>
       </section>
 
-      <section className="mt-14">
+      <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Research</h2>
 
         <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
@@ -105,32 +98,32 @@ export default function ClinicalPathwaysPage() {
             className="rounded-xl border border-line bg-surface"
           />
           <div className="leading-relaxed text-ink/80">
-            <p>I ran sessions with clinical leads in 2 NHS trusts.</p>
+            <p>I ran sessions with clinical leads in two NHS trusts.</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
-                &ldquo;I want to see - OK my patients are going to receive text
-                3 days after surgery&rdquo; NUH clinical lead
+                &ldquo;I want to see — OK, my patients are going to receive a
+                text 3 days after surgery&rdquo; — NUH clinical lead
               </li>
               <li>
                 &ldquo;How do I know the different responses will be put into
-                the correct lists&rdquo; Nursing lead, MCHT
+                the correct lists?&rdquo; — Nursing lead, MCHT
               </li>
             </ul>
-            <p className="mt-3">There was a lack of trust because of the lack of visibility</p>
+            <p className="mt-3">The mistrust came from a lack of visibility.</p>
           </div>
         </div>
 
         <div className="mt-10 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
           <div className="leading-relaxed text-ink/80 sm:order-1">
-            <p>Understanding the 2 user types needs.</p>
+            <p>The two user types needed different things from the same view.</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
-                Clinical leads scanned for patients: where does this patient
-                end up if they answer X?
+                Clinical leads scanned for patients: where does this patient end
+                up if they answer X?
               </li>
               <li>
-                Operational buyers scanned for reporting: How can I report on
-                how many patients my teams sees?
+                Operational buyers scanned for reporting: how do I report on how
+                many patients my team sees?
               </li>
             </ul>
           </div>
@@ -144,14 +137,14 @@ export default function ClinicalPathwaysPage() {
         </div>
       </section>
 
-      <section className="mt-14">
+      <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Principles</h2>
         <div className="mt-6 space-y-8">
           <div>
             <h3 className="font-mono text-sm text-ink-2">01. What to show, what to hide</h3>
             <p className="mt-2 leading-relaxed text-ink/80">
-              Surface tags and automation logic, clinically more safe to show
-              the why behind what is happening
+              Surface the tags and automation logic. Clinically, it&apos;s safer
+              to show the why behind what&apos;s happening than to hide it.
             </p>
           </div>
           <div>
@@ -167,16 +160,16 @@ export default function ClinicalPathwaysPage() {
               03. Design within the data, and ahead of it
             </h3>
             <p className="mt-2 leading-relaxed text-ink/80">
-              No good states, no fictional flexibility. The canvas only renders
+              No good states, no fictional flexibility — the canvas only renders
               what the data model can actually express. But every interaction
-              was sketched twice. Once for the 3-branch MVP we were shipping,
+              was sketched twice: once for the 3-branch MVP we were shipping,
               once for the 30-branch system clients would grow into. The MVP
-              shipped clean. The case for a full schema rebuild made itself.
+              shipped clean, and the case for a full schema rebuild made itself.
             </p>
           </div>
         </div>
 
-        <div className="mt-8">
+        <figure className="mt-8">
           <Image
             src="/clinical-pathways/pathway-wireframe.png"
             alt="Branching pathway canvas wireframe — a patient journey splitting into responded, awaiting response and no response states across two decision points"
@@ -184,11 +177,15 @@ export default function ClinicalPathwaysPage() {
             height={299}
             className="w-full rounded-xl border border-line bg-surface p-4"
           />
-        </div>
+          <figcaption className="mt-3 text-center text-sm text-ink-3">
+            The canvas branches on each response — responded, awaiting response,
+            no response — across every decision point.
+          </figcaption>
+        </figure>
 
-        <div className="mt-8 space-y-4 text-center italic text-ink-2">
-          <p>&ldquo;We need to see the automated tags that are being applied and why&rdquo;</p>
-          <p>&ldquo;Flexible canvas would require too much technical implementation for MVP&rdquo;</p>
+        <div className="mt-10 space-y-4 border-l-2 border-accent pl-6 italic text-ink-2">
+          <p>&ldquo;We need to see the automated tags that are being applied, and why.&rdquo;</p>
+          <p>&ldquo;A flexible canvas would require too much technical implementation for the MVP.&rdquo;</p>
         </div>
       </section>
 
@@ -198,22 +195,15 @@ export default function ClinicalPathwaysPage() {
           <p>
             The canvas surfaces three things by default: where the patient
             enters the journey, what happens at each touch point, and the
-            automated paths the patient could take. Users can expand any branch
-            to see detail, collapse it to see structure, and move into pathway
-            settings without losing their place.
+            automated paths they could take. Users can expand any branch to see
+            detail, collapse it to see structure, and move into pathway settings
+            without losing their place.
           </p>
           <p>
-            The biggest design decision was make a canvas within the
-            constraints of the data. We shipped a solution that validated how
-            showing our customers the underlying logic validated their
-            assumptions about the platform.
+            The biggest decision was to build the canvas within the constraints
+            of the data, not around them. Showing customers the underlying logic
+            validated their assumptions about the platform.
           </p>
-        </div>
-        <div className="mt-8">
-          <Placeholder
-            label="Shipped pathway builder — waiting list validation pathway canvas in the Isla product"
-            aspect="aspect-[16/10]"
-          />
         </div>
       </section>
 
@@ -227,7 +217,7 @@ export default function ClinicalPathwaysPage() {
           </li>
           <li>
             The shipped MVP made the commercial case for a full data-model
-            rebuild which is currently in progress
+            rebuild, which is currently in progress.
           </li>
         </ul>
       </section>
