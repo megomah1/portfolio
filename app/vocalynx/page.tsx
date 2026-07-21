@@ -102,7 +102,7 @@ export default function VocalynxPage() {
           width={1235}
           height={556}
           priority
-          className="w-full rounded-xl border border-line bg-surface"
+          className="w-full"
         />
       </div>
 
