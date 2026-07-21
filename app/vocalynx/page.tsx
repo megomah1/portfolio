@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import StatBlock from "@/components/StatBlock";
 import NextProject from "@/components/NextProject";
 
 export const metadata: Metadata = {
@@ -87,6 +88,12 @@ export default function VocalynxPage() {
         sessions.
       </p>
 
+      <div className="mt-10 grid grid-cols-1 gap-6 border-y border-line py-8 sm:grid-cols-3">
+        <StatBlock value="30+" label="vocalists tested with" />
+        <StatBlock value="58" label="voice-users surveyed" />
+        <StatBlock value="3" label="grants & awards secured" />
+      </div>
+
       <div className="mt-10">
         <Image
           src="/vocalynx/hero.png"
@@ -101,9 +108,9 @@ export default function VocalynxPage() {
       <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Challenge</h2>
         <p className="mt-4 leading-relaxed text-ink/80">
-          People with vocal injuries have no way of knowing if they&apos;re
-          doing their therapy exercises correctly unless they&apos;re with a
-          trained professional
+          People recovering from vocal injury have no way of knowing whether
+          they&apos;re doing their therapy exercises correctly unless a trained
+          professional is in the room.
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-relaxed text-ink/80">
           <li>No visual feedback</li>
@@ -179,13 +186,49 @@ export default function VocalynxPage() {
       </section>
 
       <section className="mt-14 border-t border-line pt-12">
-        <h2 className="text-2xl font-semibold">Outcome and solution</h2>
+        <h2 className="text-2xl font-semibold">What I learned</h2>
         <p className="mt-4 leading-relaxed text-ink/80">
           Designing the hardware and the app together meant every interface
           decision had a physical constraint behind it — the 7 mm aperture, the
           single sealed unit, the hum that stands in for data. The lesson that
           stuck: <em>reducing the parts reduced the anxiety</em>, as much as
           the cost.
+        </p>
+      </section>
+
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">How I&apos;d build it now</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
+          Vocalynx predates the AI tooling I work with today. Picking it back
+          up, two things would change how it works — both aimed at the same
+          goal the product started with: taking the guesswork out.
+        </p>
+
+        <div className="mt-8 space-y-6">
+          <div className="rounded-xl border border-line bg-accent-tint/60 p-6">
+            <h3 className="text-lg font-semibold text-accent">On-device voice analysis</h3>
+            <p className="mt-2 leading-relaxed text-ink/80">
+              The aperture guide currently asks users to trust a physical
+              setting. Real-time pitch and formant analysis on the phone could
+              measure whether a warm-up is actually landing and adjust the
+              target as they go — replacing the guess the whole product set out
+              to remove.
+            </p>
+          </div>
+          <div className="rounded-xl border border-line bg-accent-tint/60 p-6">
+            <h3 className="text-lg font-semibold text-accent">Summaries for the therapist</h3>
+            <p className="mt-2 leading-relaxed text-ink/80">
+              Rather than a therapist scrubbing through raw voice samples, a
+              model could summarise a patient&apos;s week — what they practised
+              and where their voice is trending — so the human time goes to
+              judgment, not admin.
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-6 leading-relaxed text-ink/80">
+          The principle wouldn&apos;t change. AI would just take more of the
+          guesswork out of the loop, and leave the person more room to recover.
         </p>
       </section>
 
