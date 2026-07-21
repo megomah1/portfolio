@@ -24,24 +24,24 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Physical Development`,
+    default: `${site.name} — Product Designer`,
     template: `%s — ${site.name}`,
   },
   description:
-    "Physical development and industrial design work by Megan O'Mahony: hardware, prototyping, and manufacturing.",
+    "Product designer with a background in industrial design. Systems thinking, hands-on UX research, and sharp UI craft for complex software.",
   openGraph: {
-    title: `${site.name} — Physical Development`,
+    title: `${site.name} — Product Designer`,
     description:
-      "Physical development and industrial design work by Megan O'Mahony: hardware, prototyping, and manufacturing.",
+      "Product designer with a background in industrial design. Systems thinking, hands-on UX research, and sharp UI craft for complex software.",
     url: site.url,
     siteName: site.name,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Physical Development`,
+    title: `${site.name} — Product Designer`,
     description:
-      "Physical development and industrial design work by Megan O'Mahony: hardware, prototyping, and manufacturing.",
+      "Product designer with a background in industrial design. Systems thinking, hands-on UX research, and sharp UI craft for complex software.",
   },
 };
 
