@@ -3,7 +3,7 @@ import Link from "next/link";
 const references = [
   {
     quote:
-      "Effective collaboration with engineering and product — Meg works closely with the team through the build process, and design reviews remain clear and efficient, keeping feature development moving at pace.",
+      "Effective collaboration with engineering and product: Meg works closely with the team through the build process, and design reviews remain clear and efficient, keeping feature development moving at pace.",
     name: "Matt Spurgeon",
     role: "Lead Frontend Engineer",
     href: null as string | null,
@@ -42,7 +42,7 @@ export default function References() {
               ) : (
                 <span className="font-semibold text-ink">{ref.name}</span>
               )}
-              <span className="text-ink-2"> — {ref.role}</span>
+              <span className="text-ink-2"> · {ref.role}</span>
             </figcaption>
           </figure>
         ))}

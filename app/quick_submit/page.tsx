@@ -15,7 +15,7 @@ const beforeScreens = [
 ];
 
 const afterScreens = [
-  { label: "01 Patient list — Submit", alt: "patient list with a large green Submit button" },
+  { label: "01 Patient list: Submit", alt: "patient list with a large green Submit button" },
   { label: "02 Capture photo", alt: "camera view capturing a photo immediately" },
   { label: "03 Review items", alt: "add submission screen reviewing captured images" },
   { label: "04 Choose folder", alt: "choose a folder list with Psoriasis folder selected" },
@@ -42,7 +42,7 @@ export default function QuickSubmitPage() {
 
       <div className="mt-10 grid grid-cols-1 gap-6 border-y border-line py-8 sm:grid-cols-3">
         <StatBlock value="12→6" label="submission steps" />
-        <StatBlock value="26" unit="min" label="of email workarounds — eliminated" />
+        <StatBlock value="26" unit="min" label="of email workarounds, eliminated" />
         <StatBlock value="90" unit="%" label="clinician adoption, post-launch" />
       </div>
 
@@ -116,7 +116,7 @@ export default function QuickSubmitPage() {
               <figure key={screen.label} className="w-36 shrink-0">
                 <Image
                   src={`/quick-submit/before-${i + 1}.png`}
-                  alt={`Isla app before flow, step ${i + 1}: ${screen.label} — ${screen.alt}`}
+                  alt={`Isla app before flow, step ${i + 1}: ${screen.label}, ${screen.alt}`}
                   width={screen.w}
                   height={screen.h}
                   className="w-full rounded-lg border border-line bg-surface"
@@ -131,7 +131,7 @@ export default function QuickSubmitPage() {
       </section>
 
       <blockquote className="mt-16 border-y border-line py-10 text-center text-xl font-medium leading-relaxed sm:text-2xl">
-        The admin steps weren&apos;t the problem — the{" "}
+        The admin steps weren&apos;t the problem. The{" "}
         <span className="text-sienna">order</span> was. So I
         flipped the flow: <strong>capture first, admin after.</strong>
       </blockquote>
@@ -175,7 +175,7 @@ export default function QuickSubmitPage() {
               <figure key={screen.label} className="w-40 shrink-0">
                 <Image
                   src={`/quick-submit/after-${i + 1}.png`}
-                  alt={`Isla app after flow, step ${i + 1}: ${screen.label} — ${screen.alt}`}
+                  alt={`Isla app after flow, step ${i + 1}: ${screen.label}, ${screen.alt}`}
                   width={476}
                   height={852}
                   className="w-full rounded-lg border border-line bg-surface"
@@ -187,7 +187,7 @@ export default function QuickSubmitPage() {
             ))}
           </div>
           <p className="mt-1 font-mono text-xs text-sienna">
-            01 — the dominant action, first thing you see
+            01: the dominant action, first thing you see
           </p>
         </div>
       </section>
@@ -205,7 +205,7 @@ export default function QuickSubmitPage() {
           </div>
           <p className="leading-relaxed text-ink/80">
             The redesign worked because it started from an honest observation
-            about when and where clinicians actually use the product — and was
+            about when and where clinicians actually use the product, and was
             willing to reverse an assumption that had been baked into the
             original design from the start.
           </p>

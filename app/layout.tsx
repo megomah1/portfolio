@@ -24,13 +24,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Product Designer`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} · Product Designer`,
+    template: `%s · ${site.name}`,
   },
   description:
     "Product designer with a background in industrial design. Systems thinking, hands-on UX research, and sharp UI craft for complex software.",
   openGraph: {
-    title: `${site.name} — Product Designer`,
+    title: `${site.name} · Product Designer`,
     description:
       "Product designer with a background in industrial design. Systems thinking, hands-on UX research, and sharp UI craft for complex software.",
     url: site.url,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Product Designer`,
+    title: `${site.name} · Product Designer`,
     description:
       "Product designer with a background in industrial design. Systems thinking, hands-on UX research, and sharp UI craft for complex software.",
   },

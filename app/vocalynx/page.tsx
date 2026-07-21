@@ -24,7 +24,7 @@ const insights = [
   },
   {
     heading: <>No easy way to record and share vocal progress</>,
-    body: "Uploading recordings on the go meant juggling Dropbox and Google Drive logins — most users simply stopped",
+    body: "Uploading recordings on the go meant juggling Dropbox and Google Drive logins, so most users simply stopped",
   },
   {
     heading: <>Existing tools cost too much</>,
@@ -41,7 +41,7 @@ const decisions = [
   {
     number: "Decision 1",
     heading: "Single device not five",
-    body: "The market-leading tool ships as five loose parts that users kept losing. Vocalynx is one sealed unit — nothing to assemble, nothing to lose, and cheaper to manufacture.",
+    body: "The market-leading tool ships as five loose parts that users kept losing. Vocalynx is one sealed unit: nothing to assemble, nothing to lose, and cheaper to manufacture.",
   },
   {
     number: "Decision 2",
@@ -97,7 +97,8 @@ export default function VocalynxPage() {
       <div className="mt-10">
         <Image
           src="/vocalynx/hero.png"
-          alt="Vocalynx companion app — log in screen and 'Hi, Mona' home screen with a Straw warm-up session — shown beside the single sealed handheld phonation device"
+          quality={90}
+          alt="Vocalynx companion app: log in screen and 'Hi, Mona' home screen with a Straw warm-up session, shown beside the single sealed handheld phonation device"
           width={1235}
           height={556}
           priority
@@ -177,7 +178,8 @@ export default function VocalynxPage() {
         <div className="mt-8">
           <Image
             src="/vocalynx/tools.png"
-            alt="Vocalynx app tools — aperture guide (7.0 mm warm-up), voice samples recording screen, and profile with prescription, progress report and reminders"
+            quality={90}
+            alt="Vocalynx app tools: aperture guide (7.0 mm warm-up), voice samples recording screen, and profile with prescription, progress report and reminders"
             width={1085}
             height={773}
             className="w-full rounded-xl border border-line bg-surface"
@@ -189,7 +191,7 @@ export default function VocalynxPage() {
         <h2 className="text-2xl font-semibold">What I learned</h2>
         <p className="mt-4 leading-relaxed text-ink/80">
           Designing the hardware and the app together meant every interface
-          decision had a physical constraint behind it — the 7 mm aperture, the
+          decision had a physical constraint behind it: the 7 mm aperture, the
           single sealed unit, the hum that stands in for data. The lesson that
           stuck: <em>reducing the parts reduced the anxiety</em>, as much as
           the cost.
@@ -200,7 +202,7 @@ export default function VocalynxPage() {
         <h2 className="text-2xl font-semibold">How I&apos;d build it now</h2>
         <p className="mt-4 leading-relaxed text-ink/80">
           Vocalynx predates the AI tooling I work with today. Picking it back
-          up, two things would change how it works — both aimed at the same
+          up, two things would change how it works, both aimed at the same
           goal the product started with: taking the guesswork out.
         </p>
 
@@ -211,7 +213,7 @@ export default function VocalynxPage() {
               The aperture guide currently asks users to trust a physical
               setting. Real-time pitch and formant analysis on the phone could
               measure whether a warm-up is actually landing and adjust the
-              target as they go — replacing the guess the whole product set out
+              target as they go, replacing the guess the whole product set out
               to remove.
             </p>
           </div>
@@ -219,8 +221,8 @@ export default function VocalynxPage() {
             <h3 className="text-lg font-semibold text-accent">Summaries for the therapist</h3>
             <p className="mt-2 leading-relaxed text-ink/80">
               Rather than a therapist scrubbing through raw voice samples, a
-              model could summarise a patient&apos;s week — what they practised
-              and where their voice is trending — so the human time goes to
+              model could summarise a patient&apos;s week: what they practised
+              and where their voice is trending, so the human time goes to
               judgment, not admin.
             </p>
           </div>

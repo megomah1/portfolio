@@ -1,7 +1,7 @@
 const TICKS = 80;
 
 /* A quiet ruler of tick marks under the hero. On hover the ticks rise in a
-   slow travelling ripple (staggered transition delays) — felt, not noticed. */
+   slow travelling ripple (staggered transition delays), felt, not noticed. */
 export default function HeroRule() {
   return (
     <div

@@ -53,7 +53,7 @@ export default function ClinicalPathwaysPage() {
           <p>
             Our healthcare platform handles complex patient journeys behind the
             scenes: it sends messages and routes patients down different paths
-            based on their answers. But none of it was visible — and clients
+            based on their answers. But none of it was visible, and clients
             didn&apos;t trust what they couldn&apos;t see.
           </p>
           <p>
@@ -92,6 +92,7 @@ export default function ClinicalPathwaysPage() {
         <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
           <Image
             src="/clinical-pathways/brainstorm.png"
+            quality={90}
             alt="FigJam brainstorm board exploring how users think about pathways, with clustered sticky notes on user understanding, adoption, success measurement and a mapped emergency laparotomy pathway"
             width={2000}
             height={1110}
@@ -101,12 +102,12 @@ export default function ClinicalPathwaysPage() {
             <p>I ran sessions with clinical leads in two NHS trusts.</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
-                &ldquo;I want to see — OK, my patients are going to receive a
-                text 3 days after surgery&rdquo; — NUH clinical lead
+                &ldquo;I want to see: OK, my patients are going to receive a
+                text 3 days after surgery&rdquo; · NUH clinical lead
               </li>
               <li>
                 &ldquo;How do I know the different responses will be put into
-                the correct lists?&rdquo; — Nursing lead, MCHT
+                the correct lists?&rdquo; · Nursing lead, MCHT
               </li>
             </ul>
             <p className="mt-3">The mistrust came from a lack of visibility.</p>
@@ -129,7 +130,8 @@ export default function ClinicalPathwaysPage() {
           </div>
           <Image
             src="/clinical-pathways/personas.png"
-            alt="Persona boards for admin users — Tony McGuin (SPA admin), Joanna Michalska (admin), Clare Gately (researcher) and an ideal admin persona, each with goals, workflow, pain points and frustrations"
+            quality={90}
+            alt="Persona boards for admin users: Tony McGuin (SPA admin), Joanna Michalska (admin), Clare Gately (researcher) and an ideal admin persona, each with goals, workflow, pain points and frustrations"
             width={1190}
             height={779}
             className="rounded-xl border border-line bg-surface sm:order-2"
@@ -160,7 +162,7 @@ export default function ClinicalPathwaysPage() {
               03. Design within the data, and ahead of it
             </h3>
             <p className="mt-2 leading-relaxed text-ink/80">
-              No good states, no fictional flexibility — the canvas only renders
+              No good states, no fictional flexibility. The canvas only renders
               what the data model can actually express. But every interaction
               was sketched twice: once for the 3-branch MVP we were shipping,
               once for the 30-branch system clients would grow into. The MVP
@@ -172,14 +174,15 @@ export default function ClinicalPathwaysPage() {
         <figure className="mt-8">
           <Image
             src="/clinical-pathways/pathway-wireframe.png"
-            alt="Branching pathway canvas wireframe — a patient journey splitting into responded, awaiting response and no response states across two decision points"
+            quality={90}
+            alt="Branching pathway canvas wireframe: a patient journey splitting into responded, awaiting response and no response states across two decision points"
             width={1235}
             height={299}
             className="w-full rounded-xl border border-line bg-surface p-4"
           />
           <figcaption className="mt-3 text-center text-sm text-ink-3">
-            The canvas branches on each response — responded, awaiting response,
-            no response — across every decision point.
+            The canvas branches on each response (responded, awaiting response,
+            no response) across every decision point.
           </figcaption>
         </figure>
 

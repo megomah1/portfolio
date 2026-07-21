@@ -4,7 +4,7 @@ import TagPill from "./TagPill";
 
 const stats = [
   { value: "12→6", label: "submission steps" },
-  { value: "26 min", label: "of email workarounds — eliminated" },
+  { value: "26 min", label: "of email workarounds, eliminated" },
   { value: "90%", label: "clinician adoption" },
 ];
 

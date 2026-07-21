@@ -1,11 +1,11 @@
 import Link from "next/link";
-import Placeholder from "@/components/Placeholder";
 import TagPill from "@/components/TagPill";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import Reveal from "@/components/Reveal";
 import HeroRule from "@/components/HeroRule";
 import Spotlight from "@/components/Spotlight";
 import References from "@/components/References";
+import PolaroidStack from "@/components/PolaroidStack";
 import { caseStudies } from "@/lib/site";
 
 export default function Home() {
@@ -42,16 +42,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-xs">
-          <p className="anim-rise anim-delay-4 mb-3 text-right text-sm italic text-ink-3">
-            Select to learn more about me
-          </p>
-          <div className="anim-settle rotate-2 rounded-xl border border-line bg-surface p-3 pb-6 shadow-[0_2px_12px_rgba(41,36,32,0.08)] transition-transform duration-300 hover:rotate-0">
-            <Placeholder label="Portrait photo of Megan O'Mahony" aspect="aspect-[4/5]" />
-            <p className="mt-3 text-center font-display italic text-ink-2">
-              - Product Designer -
-            </p>
-          </div>
+        <div className="anim-settle relative mx-auto w-full max-w-sm">
+          <PolaroidStack />
         </div>
       </section>
 
