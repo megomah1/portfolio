@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Placeholder from "@/components/Placeholder";
+import Image from "next/image";
 import NextProject from "@/components/NextProject";
 
 export const metadata: Metadata = {
@@ -87,14 +87,14 @@ export default function VocalynxPage() {
         sessions.
       </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <Placeholder
-          label="Vocalynx companion app — log in screen and 'Hi, Mona' home screen with Straw warm-up session"
-          aspect="aspect-[4/3]"
-        />
-        <Placeholder
-          label="Vocalynx phonation device — single sealed handheld unit render"
-          aspect="aspect-[4/3]"
+      <div className="mt-10">
+        <Image
+          src="/vocalynx/hero.png"
+          alt="Vocalynx companion app — log in screen and 'Hi, Mona' home screen with a Straw warm-up session — shown beside the single sealed handheld phonation device"
+          width={1235}
+          height={556}
+          priority
+          className="w-full rounded-xl border border-line bg-surface"
         />
       </div>
 
@@ -168,9 +168,12 @@ export default function VocalynxPage() {
           therapy prescription, progress reports and reminders in one place.
         </p>
         <div className="mt-8">
-          <Placeholder
-            label="Vocalynx app tools — aperture guide (7.0 mm warm-up), voice samples recording screen, and profile with prescription and reminders"
-            aspect="aspect-[16/9]"
+          <Image
+            src="/vocalynx/tools.png"
+            alt="Vocalynx app tools — aperture guide (7.0 mm warm-up), voice samples recording screen, and profile with prescription, progress report and reminders"
+            width={1085}
+            height={773}
+            className="w-full rounded-xl border border-line bg-surface"
           />
         </div>
       </section>

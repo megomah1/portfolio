@@ -97,9 +97,12 @@ export default function ClinicalPathwaysPage() {
         <h2 className="text-2xl font-semibold">Research</h2>
 
         <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
-          <Placeholder
-            label="Research synthesis boards — pathway notes and clustered sticky notes from clinical lead sessions"
-            aspect="aspect-[4/3]"
+          <Image
+            src="/clinical-pathways/brainstorm.png"
+            alt="FigJam brainstorm board exploring how users think about pathways, with clustered sticky notes on user understanding, adoption, success measurement and a mapped emergency laparotomy pathway"
+            width={2000}
+            height={1110}
+            className="rounded-xl border border-line bg-surface"
           />
           <div className="leading-relaxed text-ink/80">
             <p>I ran sessions with clinical leads in 2 NHS trusts.</p>
@@ -132,10 +135,10 @@ export default function ClinicalPathwaysPage() {
             </ul>
           </div>
           <Image
-            src="/clinical-pathways/persona-mapping.png"
-            alt="User persona mapping boards for CFA admin, admin triaging, researcher and admin pathway builder, with app screens and clustered notes for each"
-            width={1800}
-            height={1016}
+            src="/clinical-pathways/personas.png"
+            alt="Persona boards for admin users — Tony McGuin (SPA admin), Joanna Michalska (admin), Clare Gately (researcher) and an ideal admin persona, each with goals, workflow, pain points and frustrations"
+            width={1190}
+            height={779}
             className="rounded-xl border border-line bg-surface sm:order-2"
           />
         </div>
@@ -174,9 +177,12 @@ export default function ClinicalPathwaysPage() {
         </div>
 
         <div className="mt-8">
-          <Placeholder
-            label="Pathway canvas wireframe — branching flow diagram with state labels"
-            aspect="aspect-[16/7]"
+          <Image
+            src="/clinical-pathways/pathway-wireframe.png"
+            alt="Branching pathway canvas wireframe — a patient journey splitting into responded, awaiting response and no response states across two decision points"
+            width={1235}
+            height={299}
+            className="w-full rounded-xl border border-line bg-surface p-4"
           />
         </div>
 
