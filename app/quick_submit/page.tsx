@@ -3,26 +3,6 @@ import Image from "next/image";
 import StatBlock from "@/components/StatBlock";
 import NextProject from "@/components/NextProject";
 
-const beforeScreens = [
-  { label: "Choose patient", alt: "patient list with search and filters", w: 346, h: 708 },
-  { label: "Choose folder", alt: "folder dropdown open on the patient record", w: 347, h: 709 },
-  { label: "Add button", alt: "patient record with create new folder and submissions list", w: 348, h: 710 },
-  { label: "Consent", alt: "consent confirmation dialog before adding items", w: 347, h: 710 },
-  { label: "Add items", alt: "add photos, videos or files upload screen", w: 348, h: 710 },
-  { label: "Capture photo", alt: "camera view capturing a photo", w: 348, h: 709 },
-  { label: "Upload", alt: "add more photos, videos or files to the record", w: 318, h: 709 },
-  { label: "Uploaded", alt: "success toasts confirming attachments submitted", w: 327, h: 709 },
-];
-
-const afterScreens = [
-  { label: "01 Patient list: Submit", alt: "patient list with a large green Submit button" },
-  { label: "02 Capture photo", alt: "camera view capturing a photo immediately" },
-  { label: "03 Review items", alt: "add submission screen reviewing captured images" },
-  { label: "04 Choose folder", alt: "choose a folder list with Psoriasis folder selected" },
-  { label: "05 Confirm consent", alt: "add submission screen with confirm consent and continue" },
-  { label: "06 Done", alt: "success screen, three items added to the patient's Isla record" },
-];
-
 export const metadata: Metadata = {
   title: "A quicker way to submit images",
   description:
@@ -111,21 +91,15 @@ export default function QuickSubmitPage() {
             patient.
           </p>
 
-          <div className="mt-6 flex gap-4 overflow-x-auto pb-2">
-            {beforeScreens.map((screen, i) => (
-              <figure key={screen.label} className="w-36 shrink-0">
-                <Image
-                  src={`/quick-submit/before-${i + 1}.png`}
-                  alt={`Isla app before flow, step ${i + 1}: ${screen.label}, ${screen.alt}`}
-                  width={screen.w}
-                  height={screen.h}
-                  className="w-full rounded-lg border border-line bg-surface"
-                />
-                <figcaption className="mt-2 text-xs font-medium text-ink-2">
-                  {i + 1}. {screen.label}
-                </figcaption>
-              </figure>
-            ))}
+          <div className="mt-6 overflow-x-auto rounded-xl border border-line bg-surface p-4">
+            <Image
+              src="/quick-submit/before-strip.png"
+              alt="Isla before flow, eight screens: 1. Choose patient, 2. Choose folder, 3. Add button, 4. Consent, 5. Add items, 6. Capture photo, 7. Upload, 8. Uploaded"
+              width={2200}
+              height={720}
+              quality={90}
+              className="h-auto w-full min-w-[720px]"
+            />
           </div>
         </div>
       </section>
@@ -170,25 +144,16 @@ export default function QuickSubmitPage() {
             secured first; the cognitive load is saved to after
           </p>
 
-          <div className="mt-6 flex gap-4 overflow-x-auto pb-2">
-            {afterScreens.map((screen, i) => (
-              <figure key={screen.label} className="w-40 shrink-0">
-                <Image
-                  src={`/quick-submit/after-${i + 1}.png`}
-                  alt={`Isla app after flow, step ${i + 1}: ${screen.label}, ${screen.alt}`}
-                  width={476}
-                  height={852}
-                  className="w-full rounded-lg border border-line bg-surface"
-                />
-                <figcaption className="mt-2 text-xs font-medium text-ink-2">
-                  {screen.label}
-                </figcaption>
-              </figure>
-            ))}
+          <div className="mt-6 overflow-x-auto rounded-xl border border-line bg-surface p-4">
+            <Image
+              src="/quick-submit/after-strip.png"
+              alt="Isla after flow, six connected screens: patient list with a large Submit button, capture photo, review items, choose folder, confirm consent, and a success screen confirming three items added"
+              width={2200}
+              height={656}
+              quality={90}
+              className="h-auto w-full min-w-[720px]"
+            />
           </div>
-          <p className="mt-1 font-mono text-xs text-sienna">
-            01: the dominant action, first thing you see
-          </p>
         </div>
       </section>
 
