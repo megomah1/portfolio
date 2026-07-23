@@ -3,6 +3,17 @@ import Image from "next/image";
 import StatBlock from "@/components/StatBlock";
 import NextProject from "@/components/NextProject";
 
+const beforeScreens = [
+  { label: "Choose patient", w: 346, h: 708 },
+  { label: "Choose folder", w: 347, h: 709 },
+  { label: "Add button", w: 348, h: 710 },
+  { label: "Consent", w: 347, h: 710 },
+  { label: "Add items", w: 348, h: 710 },
+  { label: "Capture photo", w: 348, h: 709 },
+  { label: "Upload", w: 318, h: 709 },
+  { label: "Uploaded", w: 327, h: 709 },
+];
+
 export const metadata: Metadata = {
   title: "A quicker way to submit images",
   description:
@@ -91,16 +102,25 @@ export default function QuickSubmitPage() {
             patient.
           </p>
 
-          <div className="mt-6 overflow-x-auto rounded-xl border border-line bg-surface p-4">
-            <Image
-              src="/quick-submit/before-strip.png"
-              alt="Isla before flow, eight screens: 1. Choose patient, 2. Choose folder, 3. Add button, 4. Consent, 5. Add items, 6. Capture photo, 7. Upload, 8. Uploaded"
-              width={2200}
-              height={720}
-              quality={90}
-              className="h-auto w-full min-w-[720px]"
-            />
-          </div>
+          <ol className="mt-6 flex gap-4 overflow-x-auto pb-2">
+            {beforeScreens.map((screen, i) => (
+              <li key={screen.label}>
+                <figure className="w-32 shrink-0 sm:w-36">
+                  <Image
+                    src={`/quick-submit/before-${i + 1}.png`}
+                    alt={`Isla before flow, step ${i + 1}: ${screen.label}`}
+                    width={screen.w}
+                    height={screen.h}
+                    quality={90}
+                    className="w-full rounded-lg border border-line"
+                  />
+                  <figcaption className="mt-2 text-xs text-ink-2">
+                    <span className="font-medium text-ink">{i + 1}.</span> {screen.label}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
