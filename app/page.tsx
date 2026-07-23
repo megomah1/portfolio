@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import HeroRule from "@/components/HeroRule";
 import Spotlight from "@/components/Spotlight";
 import References from "@/components/References";
-import PolaroidStack from "@/components/PolaroidStack";
+import PortraitGallery from "@/components/PortraitGallery";
 import { caseStudies } from "@/lib/site";
 
 export default function Home() {
@@ -42,8 +42,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="anim-settle relative mx-auto w-full max-w-sm">
-          <PolaroidStack />
+        <div className="anim-rise anim-delay-3 relative mx-auto w-full max-w-sm">
+          <PortraitGallery />
         </div>
       </section>
 
