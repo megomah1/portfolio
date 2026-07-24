@@ -89,15 +89,7 @@ export default function ClinicalPathwaysPage() {
       <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Research</h2>
 
-        <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
-          <Image
-            src="/clinical-pathways/brainstorm.png"
-            quality={90}
-            alt="FigJam brainstorm board exploring how users think about pathways, with clustered sticky notes on user understanding, adoption, success measurement and a mapped emergency laparotomy pathway"
-            width={2000}
-            height={1110}
-            className="rounded-xl border border-line bg-surface"
-          />
+        <div className="mt-6 space-y-6">
           <div className="leading-relaxed text-ink/80">
             <p>I ran sessions with clinical leads in two NHS trusts.</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -112,10 +104,18 @@ export default function ClinicalPathwaysPage() {
             </ul>
             <p className="mt-3">The mistrust came from a lack of visibility.</p>
           </div>
+          <Image
+            src="/clinical-pathways/brainstorm.png"
+            quality={90}
+            alt="FigJam brainstorm board exploring how users think about pathways, with clustered sticky notes on user understanding, adoption, success measurement and a mapped emergency laparotomy pathway"
+            width={2000}
+            height={1110}
+            className="w-full rounded-xl border border-line bg-surface"
+          />
         </div>
 
-        <div className="mt-10 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
-          <div className="leading-relaxed text-ink/80 sm:order-1">
+        <div className="mt-12 space-y-6">
+          <div className="leading-relaxed text-ink/80">
             <p>The two user types needed different things from the same view.</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
@@ -134,7 +134,7 @@ export default function ClinicalPathwaysPage() {
             alt="Persona boards for admin users: Tony McGuin (SPA admin), Joanna Michalska (admin), Clare Gately (researcher) and an ideal admin persona, each with goals, workflow, pain points and frustrations"
             width={1190}
             height={779}
-            className="rounded-xl border border-line bg-surface sm:order-2"
+            className="w-full rounded-xl border border-line bg-surface"
           />
         </div>
       </section>
