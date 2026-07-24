@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import NextProject from "@/components/NextProject";
+import PathwayShowcase from "@/components/PathwayShowcase";
 
 export const metadata: Metadata = {
   title: "Visualising Clinical Pathway Data",
@@ -63,6 +64,44 @@ export default function ClinicalPathwaysPage() {
           </p>
           <p>The product was doing meaningful work, and no one could point to it.</p>
         </div>
+      </section>
+
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">Mapping the pathways end to end</h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
+          <p>
+            Before designing anything, I mapped complete clinical pathways with
+            NHS clients, from eRS referral through Isla, patient contact and
+            the EPR, all the way to the hospital. Working across trusts let me
+            understand what each one actually wanted, where their journeys were
+            the same, and where they diverged.
+          </p>
+          <p>
+            Mapping every touch point together did two things: it built a shared
+            picture of the journey with the client, and it exposed where Isla
+            was missing the data to represent a step. Those gaps became the
+            argument for what the builder, and the data model behind it, had
+            to support.
+          </p>
+        </div>
+
+        <figure className="mt-8 -mx-6 sm:mx-0">
+          <div className="overflow-x-auto rounded-none border-y border-line bg-surface sm:rounded-2xl sm:border">
+            <Image
+              src="/clinical-pathways/blueprint.png"
+              alt="End-to-end clinical pathway service blueprint across five swimlanes (eRS/Referral, Isla DPP, Patient contact / NHS App / NHS notify, FDP / EPR and Hospital staff) mapped with sticky notes from workshops with NHS clients"
+              width={1275}
+              height={725}
+              quality={95}
+              className="w-full min-w-[900px]"
+            />
+          </div>
+          <figcaption className="mt-3 px-6 text-sm text-ink-3 sm:px-0">
+            One pathway mapped end to end with a trust, across every system and
+            team it touches. Repeating this surfaced the common structure between
+            trusts, and the data Isla didn&apos;t yet hold.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="mt-14 border-t border-line pt-12">
@@ -171,20 +210,42 @@ export default function ClinicalPathwaysPage() {
           </div>
         </div>
 
-        <figure className="mt-8">
-          <Image
-            src="/clinical-pathways/pathway-wireframe.png"
-            quality={90}
-            alt="Branching pathway canvas wireframe: a patient journey splitting into responded, awaiting response and no response states across two decision points"
-            width={1235}
-            height={299}
-            className="w-full rounded-xl border border-line bg-surface p-4"
-          />
-          <figcaption className="mt-3 text-center text-sm text-ink-3">
-            The canvas branches on each response (responded, awaiting response,
-            no response) across every decision point.
-          </figcaption>
-        </figure>
+        <div className="mt-8 space-y-8">
+          <figure>
+            <div className="overflow-x-auto rounded-xl border border-line bg-surface p-4">
+              <Image
+                src="/clinical-pathways/wireframe-flow.png"
+                quality={95}
+                alt="Wireframe of the pathway canvas: a horizontal flow of referral, form and image, decision, appointment and assessment steps, with branches for responded and discharged states leading to lifestyle-optimisation requests"
+                width={1202}
+                height={310}
+                className="w-full min-w-[720px]"
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-ink-3">
+              Early wireframe: laying the journey out left to right, with each
+              step, its timing and its branches made explicit on the canvas.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <div className="mx-auto max-w-md rounded-xl border border-line bg-surface p-4">
+              <Image
+                src="/clinical-pathways/wireframe-metrics.png"
+                quality={95}
+                alt="Wireframe showing a pathway with a metrics header (total patients, active, rejected, reviewed and abandoned) and branch percentages such as 10% and 80% on each step"
+                width={766}
+                height={595}
+                className="w-full rounded-lg"
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-sm text-ink-3">
+              Wireframing the reporting layer: cohort counts on top, and the
+              share of patients taking each branch: the data operational buyers
+              were asking for.
+            </figcaption>
+          </figure>
+        </div>
 
         <div className="mt-10 space-y-4 border-l-2 border-accent pl-6 italic text-ink-2">
           <p>&ldquo;We need to see the automated tags that are being applied, and why.&rdquo;</p>
@@ -207,6 +268,10 @@ export default function ClinicalPathwaysPage() {
             of the data, not around them. Showing customers the underlying logic
             validated their assumptions about the platform.
           </p>
+        </div>
+
+        <div className="mt-10">
+          <PathwayShowcase />
         </div>
       </section>
 
