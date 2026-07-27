@@ -10,19 +10,19 @@ const stats = [
 
 const screens = [
   {
-    src: "/quick-submit/after-1.png",
+    src: "/quick-submit/after-01.png",
     alt: "Isla patient list with a large Submit button as the dominant action",
-    className: "rotate-[-3deg]",
+    className: "z-0 translate-y-5 rotate-[-8deg]",
   },
   {
-    src: "/quick-submit/after-2.png",
-    alt: "Camera view capturing a clinical photo immediately",
-    className: "z-10 -mx-4 -translate-y-3 sm:-mx-6",
+    src: "/quick-submit/after-04.png",
+    alt: "Choosing a folder to file the captured images into",
+    className: "z-20 -mx-8 sm:-mx-10",
   },
   {
-    src: "/quick-submit/after-6.png",
-    alt: "Success screen confirming three items added to the patient's Isla record",
-    className: "rotate-[3deg]",
+    src: "/quick-submit/after-06.png",
+    alt: "Success screen confirming three images added to the patient's Isla record",
+    className: "z-10 translate-y-5 rotate-[8deg]",
   },
 ];
 
@@ -66,15 +66,15 @@ export default function Spotlight() {
           </Link>
         </div>
 
-        <div className="group flex items-center justify-center pt-2">
+        <div className="group flex items-end justify-center pt-2">
           {screens.map((screen) => (
             <Image
               key={screen.src}
               src={screen.src}
               alt={screen.alt}
-              width={476}
-              height={852}
-              className={`${screen.className} w-1/3 max-w-36 rounded-lg border border-line bg-paper shadow-[0_4px_20px_rgba(41,36,32,0.10)] transition-transform duration-300 motion-safe:group-hover:rotate-0 motion-safe:group-hover:translate-y-0`}
+              width={700}
+              height={1515}
+              className={`${screen.className} w-[32%] max-w-[10rem] drop-shadow-[0_12px_32px_rgba(41,36,32,0.18)] transition-all duration-300 ease-out motion-safe:group-hover:translate-y-0 motion-safe:group-hover:rotate-0`}
             />
           ))}
         </div>

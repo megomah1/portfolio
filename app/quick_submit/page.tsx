@@ -14,6 +14,15 @@ const beforeScreens = [
   { label: "Uploaded", w: 327, h: 709 },
 ];
 
+const afterScreens = [
+  { label: "Patient list" },
+  { label: "Capture" },
+  { label: "Review images" },
+  { label: "Choose folder" },
+  { label: "Confirm" },
+  { label: "Done" },
+];
+
 export const metadata: Metadata = {
   title: "A quicker way to submit images",
   description:
@@ -164,16 +173,25 @@ export default function QuickSubmitPage() {
             secured first; the cognitive load is saved to after
           </p>
 
-          <div className="mt-6 overflow-x-auto rounded-xl border border-line bg-surface p-4">
-            <Image
-              src="/quick-submit/after-strip.png"
-              alt="Isla after flow, six connected screens: patient list with a large Submit button, capture photo, review items, choose folder, confirm consent, and a success screen confirming three items added"
-              width={2200}
-              height={656}
-              quality={90}
-              className="h-auto w-full min-w-[720px]"
-            />
-          </div>
+          <ol className="mt-6 flex gap-5 overflow-x-auto pb-2">
+            {afterScreens.map((screen, i) => (
+              <li key={screen.label}>
+                <figure className="w-40 shrink-0 sm:w-44">
+                  <Image
+                    src={`/quick-submit/after-0${i + 1}.png`}
+                    alt={`Isla after flow, step ${i + 1}: ${screen.label}`}
+                    width={700}
+                    height={1515}
+                    quality={90}
+                    className="w-full drop-shadow-[0_8px_24px_rgba(41,36,32,0.12)]"
+                  />
+                  <figcaption className="mt-3 text-xs text-ink-2">
+                    <span className="font-medium text-ink">{i + 1}.</span> {screen.label}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
