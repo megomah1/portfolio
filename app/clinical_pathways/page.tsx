@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import NextProject from "@/components/NextProject";
 import PathwayShowcase from "@/components/PathwayShowcase";
+import PathwayDetails from "@/components/PathwayDetails";
 
 export const metadata: Metadata = {
   title: "Visualising Clinical Pathway Data",
@@ -24,7 +25,7 @@ export default function ClinicalPathwaysPage() {
         </div>
         <div>
           <dt className="font-mono uppercase tracking-wide text-ink-3">Reading time</dt>
-          <dd className="mt-1 italic text-ink/80">4 minutes</dd>
+          <dd className="mt-1 italic text-ink/80">5 minutes</dd>
         </div>
         <div>
           <dt className="font-mono uppercase tracking-wide text-ink-3">Timeline</dt>
@@ -127,8 +128,16 @@ export default function ClinicalPathwaysPage() {
 
       <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Research</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
+          Research ran in two waves. Discovery with clinical leads at NUH and
+          MCHT before build. Then a heuristics eval and a usability programme
+          through build and post-launch: five sessions across varied roles (2
+          consultants, 2 admin users, 1 clinician), delivery workshops, and a
+          language validation session. Findings fed back into the builder, the
+          terminology, and the patient record pattern.
+        </p>
 
-        <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
           <Image
             src="/clinical-pathways/brainstorm.png"
             quality={90}
@@ -138,7 +147,7 @@ export default function ClinicalPathwaysPage() {
             className="rounded-xl border border-line bg-surface"
           />
           <div className="leading-relaxed text-ink/80">
-            <p>I ran sessions with clinical leads in two NHS trusts.</p>
+            <p>Discovery, with clinical leads at NUH and MCHT:</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
                 &ldquo;I want to see: OK, my patients are going to receive a
@@ -176,6 +185,19 @@ export default function ClinicalPathwaysPage() {
             className="rounded-xl border border-line bg-surface sm:order-2"
           />
         </div>
+
+        <p className="mt-10 leading-relaxed text-ink/80">
+          The usability wave kept surfacing the same split: builders wanted the
+          full picture, day-to-day clinicians wanted position, not
+          configuration.
+        </p>
+        <blockquote className="mt-4 border-l-2 border-accent pl-6">
+          <p className="italic leading-relaxed text-ink/80">
+            &ldquo;Timeline good for data history, pathway view better for
+            showing current patient position in pathway.&rdquo;
+          </p>
+          <p className="mt-2 text-sm text-ink-3">· Colleague, usability session</p>
+        </blockquote>
       </section>
 
       <section className="mt-14 border-t border-line pt-12">
@@ -195,6 +217,23 @@ export default function ClinicalPathwaysPage() {
               Same canvas, two reading orders: colour-coded states for
               clinicians, branch counts for operations.
             </p>
+            <p className="mt-4 leading-relaxed text-ink/80">
+              After MVP shipped, the team wanted to bring the canvas into the
+              patient record. I pushed back. Validation with day-to-day users
+              (nurses, community clinicians, admins working on mobile) surfaced
+              the opposite need. They said explicitly that a pathway view would
+              be confusing and would clutter the timeline. They needed to know
+              where a patient was on the journey, not how the pathway was
+              configured. Builders get the canvas. Clinicians get a stepper. Two
+              views, one data model.
+            </p>
+            <blockquote className="mt-4 border-l-2 border-accent pl-6">
+              <p className="italic leading-relaxed text-ink/80">
+                &ldquo;A pathway tab would be confusing… does not want to clutter
+                the timeline.&rdquo;
+              </p>
+              <p className="mt-2 text-sm text-ink-3">· NUH clinical lead</p>
+            </blockquote>
           </div>
           <div>
             <h3 className="font-mono text-sm text-ink-2">
@@ -204,8 +243,13 @@ export default function ClinicalPathwaysPage() {
               No good states, no fictional flexibility. The canvas only renders
               what the data model can actually express. But every interaction
               was sketched twice: once for the 3-branch MVP we were shipping,
-              once for the 30-branch system clients would grow into. The MVP
-              shipped clean, and the case for a full schema rebuild made itself.
+              once for the 30-branch system clients would grow into. Consistent
+              node dimensions, fixed connector geometry, left to right flow only.
+              The pattern holds because the constraints are designed in, not out.
+              I looked at n8n&apos;s node annotation and multi-trigger model as a
+              reference for how experienced builders navigate complex flows. The
+              MVP shipped clean, and the case for a full schema rebuild made
+              itself.
             </p>
           </div>
         </div>
@@ -270,14 +314,42 @@ export default function ClinicalPathwaysPage() {
           </p>
         </div>
 
+        <div className="mt-8 rounded-xl border border-line bg-accent-tint/50 p-6">
+          <p className="leading-relaxed text-ink/80">
+            The library reads as &lsquo;Message&rsquo;, &lsquo;Wait&rsquo;,
+            &lsquo;Wait for encounter&rsquo;, &lsquo;Update submission&rsquo;,
+            &lsquo;Pathology result&rsquo;. Clinical vocabulary, not developer
+            vocabulary. Node became Step. Delay became Wait. These were
+            considered choices, validated with clinical leads before shipping.
+          </p>
+        </div>
+
         <div className="mt-10">
           <PathwayShowcase />
         </div>
       </section>
 
       <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">What I cut</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
+          Branch rescheduling was originally scoped for phase 2. When the team
+          asked what use cases we had in the go-live pathways, the honest answer
+          was none. I pushed to cut it and prioritise stages in the canvas
+          instead, backed by demand from NUH, RBHH, and multiple national
+          pathway builders. Killing scope on the evidence bought engineering a
+          month back.
+        </p>
+
+        <div className="mt-10">
+          <PathwayDetails />
+        </div>
+      </section>
+
+      <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Impact</h2>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-relaxed text-ink/80">
+          <li>5 trusts now live on node pathways.</li>
+          <li>45 national pathways planned for rollout by end of year.</li>
           <li>Delivery and sales walked clients through live pathways in real time for the first time.</li>
           <li>
             The platform was selected for a national NHS project shortly after
@@ -288,6 +360,14 @@ export default function ClinicalPathwaysPage() {
             rebuild, which is currently in progress.
           </li>
         </ul>
+
+        <blockquote className="mt-8 border-l-2 border-accent pl-6">
+          <p className="italic leading-relaxed text-ink/80">
+            &ldquo;Some lovely feedback for this node pathway using outcome nodes
+            to review patients.&rdquo;
+          </p>
+          <p className="mt-2 text-sm text-ink-3">· Product</p>
+        </blockquote>
       </section>
 
       <NextProject href="/vocalynx" title="Vocalynx" />
