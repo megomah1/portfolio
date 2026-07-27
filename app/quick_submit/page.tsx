@@ -111,19 +111,19 @@ export default function QuickSubmitPage() {
             patient.
           </p>
 
-          <ol className="mt-6 flex gap-4 overflow-x-auto pb-2">
+          <ol className="mt-6 flex gap-5 overflow-x-auto pb-2">
             {beforeScreens.map((screen, i) => (
               <li key={screen.label}>
-                <figure className="w-32 shrink-0 sm:w-36">
+                <figure className="w-40 shrink-0 sm:w-44">
                   <Image
                     src={`/quick-submit/before-${i + 1}.png`}
                     alt={`Isla before flow, step ${i + 1}: ${screen.label}`}
                     width={screen.w}
                     height={screen.h}
                     quality={90}
-                    className="w-full rounded-lg border border-line"
+                    className="w-full drop-shadow-[0_8px_24px_rgba(41,36,32,0.12)]"
                   />
-                  <figcaption className="mt-2 text-xs text-ink-2">
+                  <figcaption className="mt-3 text-xs text-ink-2">
                     <span className="font-medium text-ink">{i + 1}.</span> {screen.label}
                   </figcaption>
                 </figure>

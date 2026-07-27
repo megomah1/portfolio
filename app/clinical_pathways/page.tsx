@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import NextProject from "@/components/NextProject";
 import PathwayShowcase from "@/components/PathwayShowcase";
-import PathwayDetails from "@/components/PathwayDetails";
 
 export const metadata: Metadata = {
   title: "Visualising Clinical Pathway Data",
@@ -339,10 +338,6 @@ export default function ClinicalPathwaysPage() {
           pathway builders. Killing scope on the evidence bought engineering a
           month back.
         </p>
-
-        <div className="mt-10">
-          <PathwayDetails />
-        </div>
       </section>
 
       <section className="mt-14 border-t border-line pt-12">

@@ -22,6 +22,7 @@ export type CaseStudySummary = {
   summary: string;
   tags: string[];
   imagePlaceholder: string;
+  heroScreens?: string[];
 };
 
 export const caseStudies: CaseStudySummary[] = [
@@ -31,7 +32,12 @@ export const caseStudies: CaseStudySummary[] = [
     summary:
       "I led the redesign of Isla media capture flow for frontline NHS staff, using persuasive design reducing a 12-step submission process to 6.",
     tags: ["NHS", "90% adoption rate", "50% reduction in time to task", "UX flow", "B2B"],
-    imagePlaceholder: "Isla media capture flow — patient list, capture photo, review items screens",
+    imagePlaceholder: "Isla media capture flow: patient list, capture photo, review items screens",
+    heroScreens: [
+      "/quick-submit/after-01.png",
+      "/quick-submit/after-04.png",
+      "/quick-submit/after-06.png",
+    ],
   },
   {
     slug: "clinical_pathways",
