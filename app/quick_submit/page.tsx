@@ -162,18 +162,20 @@ export default function QuickSubmitPage() {
             least resistance meant the right behaviour became the easiest one.
           </p>
         </div>
+      </section>
 
-        <div className="mt-8">
-          <span className="inline-flex items-center rounded-full bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-2">
-            After · 6 steps - capture first
-          </span>
-          <p className="mt-4 leading-relaxed text-ink/80">
-            A large submit button now sits as the dominant action. No friction
-            between deciding to capture and capturing. The clinical moment is
-            secured first; the cognitive load is saved to after
-          </p>
+      <section className="mt-14 border-t border-line pt-12">
+        <h2 className="text-2xl font-semibold">Final designs</h2>
+        <span className="mt-4 inline-flex items-center rounded-full bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-2">
+          After · 6 steps, capture first
+        </span>
+        <p className="mt-4 leading-relaxed text-ink/80">
+          A large submit button now sits as the dominant action. No friction
+          between deciding to capture and capturing. The clinical moment is
+          secured first; the cognitive load is saved to after.
+        </p>
 
-          <ol className="mt-6 flex gap-5 overflow-x-auto pb-2">
+        <ol className="mt-6 flex gap-5 overflow-x-auto pb-2">
             {afterScreens.map((screen, i) => (
               <li key={screen.label}>
                 <figure className="w-40 shrink-0 sm:w-44">
@@ -191,11 +193,10 @@ export default function QuickSubmitPage() {
                 </figure>
               </li>
             ))}
-          </ol>
-        </div>
+        </ol>
       </section>
 
-      <section className="mt-14">
+      <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Outcome</h2>
         <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-[auto_1fr]">
           <div>

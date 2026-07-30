@@ -25,7 +25,7 @@ export default function CaseStudyCard({
       className="group grid grid-cols-1 overflow-hidden rounded-xl border border-line bg-paper transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(41,36,32,0.07)] motion-reduce:transform-none sm:grid-cols-2"
     >
       {heroScreens ? (
-        <div className="flex aspect-[4/3] items-end justify-center overflow-hidden bg-surface px-6 pt-8">
+        <div className="flex aspect-[4/3] items-center justify-center overflow-hidden bg-surface px-6">
           {heroScreens.map((src, i) => (
             <Image
               key={src}

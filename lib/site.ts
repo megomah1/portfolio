@@ -49,7 +49,7 @@ export const caseStudies: CaseStudySummary[] = [
     imagePlaceholder: "Isla waiting list validation pathway visual builder",
     heroImage: {
       src: "/clinical-pathways/canvas.png",
-      className: "object-cover object-left-top",
+      className: "object-contain p-6",
     },
   },
   {
