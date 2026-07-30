@@ -17,6 +17,7 @@ export default function CaseStudyCard({
   tags,
   imagePlaceholder,
   heroScreens,
+  heroImage,
 }: CaseStudySummary) {
   return (
     <Link
@@ -35,6 +36,17 @@ export default function CaseStudyCard({
               className={`${heroTilts[i]} w-[30%] max-w-[7rem] drop-shadow-[0_10px_28px_rgba(41,36,32,0.18)] transition-transform duration-300 ease-out motion-safe:group-hover:translate-y-0 motion-safe:group-hover:rotate-0`}
             />
           ))}
+        </div>
+      ) : heroImage ? (
+        <div className="aspect-[4/3] overflow-hidden bg-surface">
+          <Image
+            src={heroImage.src}
+            alt=""
+            width={1235}
+            height={919}
+            quality={90}
+            className={`h-full w-full transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03] ${heroImage.className}`}
+          />
         </div>
       ) : (
         <Placeholder

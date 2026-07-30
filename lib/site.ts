@@ -23,6 +23,7 @@ export type CaseStudySummary = {
   tags: string[];
   imagePlaceholder: string;
   heroScreens?: string[];
+  heroImage?: { src: string; className: string };
 };
 
 export const caseStudies: CaseStudySummary[] = [
@@ -46,6 +47,10 @@ export const caseStudies: CaseStudySummary[] = [
       "How I translated dense pathway configuration logic into a visual builder used by NHS clinicians.",
     tags: ["NHS", "UX flow", "B2B healthtech", "Information architecture"],
     imagePlaceholder: "Isla waiting list validation pathway visual builder",
+    heroImage: {
+      src: "/clinical-pathways/canvas.png",
+      className: "object-cover object-left-top",
+    },
   },
   {
     slug: "vocalynx",
@@ -53,5 +58,9 @@ export const caseStudies: CaseStudySummary[] = [
     summary: "Designing a vocal therapy companion for people recovering at home",
     tags: [],
     imagePlaceholder: "Vocalynx app screens and vocal therapy device",
+    heroImage: {
+      src: "/vocalynx/hero.png",
+      className: "object-contain p-6",
+    },
   },
 ];
