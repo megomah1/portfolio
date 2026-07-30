@@ -4,14 +4,14 @@ import StatBlock from "@/components/StatBlock";
 import NextProject from "@/components/NextProject";
 
 const beforeScreens = [
-  { label: "Choose patient", w: 346, h: 708 },
-  { label: "Choose folder", w: 347, h: 709 },
-  { label: "Add button", w: 348, h: 710 },
-  { label: "Consent", w: 347, h: 710 },
-  { label: "Add items", w: 348, h: 710 },
-  { label: "Capture photo", w: 348, h: 709 },
-  { label: "Upload", w: 318, h: 709 },
-  { label: "Uploaded", w: 327, h: 709 },
+  { label: "Choose patient", w: 330, h: 726 },
+  { label: "Choose folder", w: 330, h: 726 },
+  { label: "Add button", w: 330, h: 726 },
+  { label: "Consent", w: 330, h: 726 },
+  { label: "Add items", w: 330, h: 726 },
+  { label: "Capture photo", w: 327, h: 710 },
+  { label: "Upload", w: 327, h: 710 },
+  { label: "Uploaded", w: 327, h: 710 },
 ];
 
 const afterScreens = [
@@ -121,7 +121,7 @@ export default function QuickSubmitPage() {
                     width={screen.w}
                     height={screen.h}
                     quality={90}
-                    className="w-full drop-shadow-[0_8px_24px_rgba(41,36,32,0.12)]"
+                    className="w-full rounded-xl border border-line shadow-[0_8px_24px_rgba(41,36,32,0.12)]"
                   />
                   <figcaption className="mt-3 text-xs text-ink-2">
                     <span className="font-medium text-ink">{i + 1}.</span> {screen.label}
