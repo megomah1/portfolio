@@ -87,18 +87,68 @@ export default function QuickSubmitPage() {
         <h2 className="text-2xl font-semibold">Research</h2>
         <div className="mt-4 space-y-4 leading-relaxed text-ink/80">
           <p>
-            The people using this product most were community nurses and ward
-            staff - clinicians in time-pressured, often hands-on situations. A
-            district nurse might have 30 minutes with a patient. A ward nurse
-            might be mid-dressing change or chatting to patient.
+            This started as an offline-access investigation. A user had asked
+            for full offline access, and I was researching how the platform
+            held up on limited connectivity. That research reframed the problem:
+            the real issue wasn&apos;t being offline. It was that capturing a
+            single image meant loading the patient record and working through
+            too many steps, each pulling more data than a weak signal could
+            carry.
           </p>
-          <p>
-            What became clear from speaking to users was that the
-            administrative steps weren&apos;t the problem - consent, patient
-            selection, and folder routing all matter. The problem was the
-            order. We were asking clinicians to do the hardest cognitive work
-            first, at the exact moment they needed to act quickly.
-          </p>
+          <p>What I did:</p>
+          <ul className="list-disc space-y-2 pl-6">
+            <li>
+              <strong>
+                Ran discovery and user research to find the real pain point.
+              </strong>{" "}
+              I spoke with around 10 users, community nurses, ward staff and
+              team leads, mostly in Birmingham, to understand when and where
+              they actually use the product.{" "}
+              <em>
+                Objective: separate the assumed problem (offline access) from
+                the real one: too many steps, too much data, before you can even
+                capture.
+              </em>
+            </li>
+            <li>
+              <strong>Interrogated the existing flow end to end.</strong> I
+              mapped every screen from &ldquo;decide to capture&rdquo; to
+              &ldquo;filed against the record&rdquo; and timed it at 26 minutes
+              all in.{" "}
+              <em>
+                Objective: make the cost of the current order visible, and
+                pinpoint where clinicians churned: choosing a folder while still
+                with the patient.
+              </em>
+            </li>
+            <li>
+              <strong>Mapped personas and user flows in FigJam.</strong> I
+              turned the interviews into personas and flow maps.{" "}
+              <em>
+                Objective: design for the clinician&apos;s reality
+                (time-pressured, hands-on, mid-dressing-change), not the
+                system&apos;s logic.
+              </em>
+            </li>
+            <li>
+              <strong>Looked outward for a better capture pattern.</strong> I
+              pulled apart how Snapchat and Instagram handle capture, where
+              persuasive design gets you to shoot and submit first, edit later.{" "}
+              <em>
+                Objective: borrow a &ldquo;capture first, admin after&rdquo;
+                model so the right behaviour became the easiest one.
+              </em>
+            </li>
+            <li>
+              <strong>Validated the redesign with users and internally.</strong>{" "}
+              I took the new flow back to clinicians and the team, ran usability
+              testing, and noted what I&apos;d test next.{" "}
+              <em>
+                Objective: confirm the reversed order held up before build, not
+                after.
+              </em>
+            </li>
+          </ul>
         </div>
 
         <div className="mt-8">
