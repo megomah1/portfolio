@@ -36,7 +36,7 @@ export default function Spotlight() {
             A quicker way to submit images
           </h2>
           <p className="mt-4 leading-relaxed text-ink-2">
-            I led the redesign of Isla media capture flow for frontline NHS
+            I led the redesign of Isla's media capture flow for frontline NHS
             staff, using persuasive design reducing a 12-step submission
             process to 6.
           </p>

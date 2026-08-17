@@ -3,7 +3,7 @@ export const site = {
   role: "Product Designer",
   email: "megomahony97@gmail.com",
   linkedin: "https://www.linkedin.com/in/megan-omahony/",
-  url: "https://portfolio-nextjs-vercel-nxynck.vercel.app",
+  url: "https://meganomahony.vercel.app",
   // TODO: replace with the industrial-design site's real Vercel URL after import
   physicalPortfolio: "https://industrial-design.vercel.app",
 };
@@ -31,9 +31,9 @@ export const caseStudies: CaseStudySummary[] = [
     slug: "quick_submit",
     title: "A quick way to submit",
     summary:
-      "I led the redesign of Isla media capture flow for frontline NHS staff, using persuasive design reducing a 12-step submission process to 6.",
+      "I led the redesign of Isla's media capture flow for frontline NHS staff, using persuasive design reducing a 12-step submission process to 6.",
     tags: ["NHS", "90% adoption rate", "50% reduction in time to task", "UX flow", "B2B"],
-    imagePlaceholder: "Isla media capture flow: patient list, capture photo, review items screens",
+    imagePlaceholder: "Isla's media capture flow: patient list, capture photo, review items screens",
     heroScreens: [
       "/quick-submit/after-01.png",
       "/quick-submit/after-04.png",

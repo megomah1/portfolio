@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 px-6 py-10 text-sm text-ink-2 sm:flex-row sm:items-center">
-        <p>© 2024–2025 {site.name}</p>
+        <p>© 2024–{new Date().getFullYear()} {site.name}</p>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <Link
             href={site.physicalPortfolio}
