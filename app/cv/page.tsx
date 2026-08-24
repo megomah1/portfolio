@@ -14,7 +14,7 @@ const experience = [
     where: "Isla Health / June '23 to Present (3 years)",
     tags: ["40+ NHS interviews", "9 products supported", "B2B2C"],
     bullets: [
-      "Achieved 90% adoption for a core clinical flow by redesigning the image submission journey, reducing steps from 16 to 7 and mapping drop-off through targeted usability sessions.",
+      "Achieved 65% adoption within six weeks for a core clinical flow by redesigning the image submission journey, reducing steps from 16 to 7 and mapping drop-off through targeted usability sessions.",
       "Designed inclusive, accessible experiences across clinician and patient surfaces, built to NHS accessibility standards",
       "Operated autonomously across problem framing through engineering handoff, partnering closely with product and engineering to keep the experience unified across the platform.",
       'Facilitate workshops as the team\'s Learning Champion, and ran a "Women in Tech" panel for International Women\'s Day and "AI in our workflow" team workshop.',
