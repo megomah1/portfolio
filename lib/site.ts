@@ -31,8 +31,8 @@ export const caseStudies: CaseStudySummary[] = [
     slug: "quick_submit",
     title: "A quick way to submit",
     summary:
-      "I led the redesign of Isla's media capture flow for frontline NHS staff, using persuasive design reducing a 12-step submission process to 6.",
-    tags: ["NHS", "90% adoption rate", "50% reduction in time to task", "UX flow", "B2B"],
+      "I led the redesign of Isla's media capture flow for frontline NHS staff, using persuasive design reducing a 16-step submission process to 7.",
+    tags: ["NHS", "65% adoption rate", "20 min faster to file", "UX flow", "B2B"],
     imagePlaceholder: "Isla's media capture flow: patient list, capture photo, review items screens",
     heroScreens: [
       "/quick-submit/after-01.png",

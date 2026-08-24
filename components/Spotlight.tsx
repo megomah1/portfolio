@@ -3,9 +3,9 @@ import Image from "next/image";
 import TagPill from "./TagPill";
 
 const stats = [
-  { value: "12→6", label: "submission steps" },
-  { value: "26 min", label: "of email workarounds, eliminated" },
-  { value: "90%", label: "clinician adoption" },
+  { value: "65%", label: "clinician adoption in 6 weeks" },
+  { value: "+4%", label: "submissions made in-app" },
+  { value: "16→7", label: "submission steps" },
 ];
 
 const screens = [
@@ -37,8 +37,8 @@ export default function Spotlight() {
           </h2>
           <p className="mt-4 leading-relaxed text-ink-2">
             I led the redesign of Isla's media capture flow for frontline NHS
-            staff, using persuasive design reducing a 12-step submission
-            process to 6.
+            staff, using persuasive design reducing a 16-step submission
+            process to 7.
           </p>
 
           <dl className="mt-6 flex flex-wrap gap-x-10 gap-y-4">

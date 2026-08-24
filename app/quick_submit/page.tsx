@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import StatBlock from "@/components/StatBlock";
 import NextProject from "@/components/NextProject";
+import { site } from "@/lib/site";
 
 const beforeScreens = [
   { label: "Choose patient", w: 330, h: 726 },
@@ -26,7 +27,14 @@ const afterScreens = [
 export const metadata: Metadata = {
   title: "A quicker way to submit images",
   description:
-    "I led the redesign of the core submission flow for NHS staff: the journey from deciding to capture a clinical image to filing it against a patient record. A 12-step process became six, and adoption reached 90%.",
+    "I led the redesign of the core submission flow for NHS staff: the journey from deciding to capture a clinical image to filing it against a patient record. A 16-step process became seven, and 65% of active community clinicians adopted the new flow within six weeks.",
+  openGraph: {
+    title: "A quicker way to submit images",
+    description:
+      "I led the redesign of the core submission flow for NHS staff: the journey from deciding to capture a clinical image to filing it against a patient record. A 16-step process became seven, and 65% of active community clinicians adopted the new flow within six weeks.",
+    url: `${site.url}/quick_submit`,
+    type: "article",
+  },
 };
 
 export default function QuickSubmitPage() {
@@ -37,13 +45,14 @@ export default function QuickSubmitPage() {
       <p className="mt-6 text-lg leading-relaxed text-ink-2">
         I led the redesign of the core submission flow for NHS staff: the journey
         from deciding to capture a clinical image to filing it against a patient
-        record. A 12-step process became six, and adoption reached 90%.
+        record. A 16-step process became seven, and 65% of active community
+        clinicians adopted the new flow within six weeks.
       </p>
 
       <div className="mt-10 grid grid-cols-1 gap-6 border-y border-line py-8 sm:grid-cols-3">
-        <StatBlock value="12→6" label="submission steps" />
-        <StatBlock value="26" unit="min" label="of email workarounds, eliminated" />
-        <StatBlock value="90" unit="%" label="clinician adoption, post-launch" />
+        <StatBlock value="65" unit="%" label="of active community clinicians adopted the new flow in 6 weeks" />
+        <StatBlock value="+4" unit="%" label="rise in clinician submissions made in-app" />
+        <StatBlock value="16→7" label="submission steps" />
       </div>
 
       <dl className="mt-8 grid grid-cols-1 gap-6 text-sm sm:grid-cols-3">
@@ -76,7 +85,7 @@ export default function QuickSubmitPage() {
             When we looked at the flow, the reason was clear. Before a nurse
             could take a single photo, they had to complete a sequence of
             administrative steps: find the patient, choose a folder, add a
-            submission, give consent - and only then capture the image. 12
+            submission, give consent - and only then capture the image. 16
             steps in total, with search on top of that.
           </p>
           <p>The flow had been built around the system&apos;s logic, not the user&apos;s reality.</p>
@@ -113,7 +122,8 @@ export default function QuickSubmitPage() {
             <li>
               <strong>Interrogated the existing flow end to end.</strong> I
               mapped every screen from &ldquo;decide to capture&rdquo; to
-              &ldquo;filed against the record&rdquo; and timed it at 26 minutes
+              &ldquo;filed against the record&rdquo; and clocked the
+              email-and-re-upload detour clinicians fell back on at 26 minutes
               all in.{" "}
               <em>
                 Objective: make the cost of the current order visible, and
@@ -152,6 +162,7 @@ export default function QuickSubmitPage() {
         </div>
 
         <div className="mt-8">
+          {/* TODO: confirm metric - heading states 9 screens but only 8 before-screenshots are rendered below (beforeScreens has 8 entries). Add the missing screen or correct the count to 8. */}
           <span className="inline-flex items-center rounded-full bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-2">
             Before · 9 screen, 16 steps - churning at screen 3
           </span>
@@ -205,7 +216,7 @@ export default function QuickSubmitPage() {
           </p>
           <p>
             The new flow: capture → review and consent → choose patient →
-            choose folder → uploaded. Six steps, with search only if needed.
+            choose folder → uploaded. Seven steps, with search only if needed.
           </p>
           <p>
             This was a persuasive design decision. Making capture the path of
@@ -217,7 +228,7 @@ export default function QuickSubmitPage() {
       <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Final designs</h2>
         <span className="mt-4 inline-flex items-center rounded-full bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-2">
-          After · 6 steps, capture first
+          After · 6 screen, 7 steps - capture first
         </span>
         <p className="mt-4 leading-relaxed text-ink/80">
           A large submit button now sits as the dominant action. No friction
@@ -251,19 +262,40 @@ export default function QuickSubmitPage() {
         <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-[auto_1fr]">
           <div>
             <p className="font-display text-6xl font-semibold text-accent">
-              90<span className="text-3xl">%</span>
+              65<span className="text-3xl">%</span>
             </p>
             <p className="mt-1 font-mono text-xs uppercase tracking-widest text-ink-2">
               Adoption
             </p>
           </div>
           <p className="leading-relaxed text-ink/80">
-            The redesign worked because it started from an honest observation
-            about when and where clinicians actually use the product, and was
-            willing to reverse an assumption that had been baked into the
-            original design from the start.
+            65% of active community clinicians adopted the new flow within six
+            weeks. It worked because it started from an honest observation about
+            when and where clinicians actually use the product, and was willing
+            to reverse an assumption that had been baked into the original design
+            from the start.
           </p>
         </div>
+
+        <ul className="mt-8 space-y-3 leading-relaxed text-ink/80">
+          <li>
+            The 26-minute email-and-re-upload detour clinicians relied on was
+            eliminated - capture and filing now live in one place.
+          </li>
+          <li>
+            Submissions shifted channel: a 4% rise in clinician submissions made
+            in-app rather than routed through personal email.
+          </li>
+          <li>
+            Filing an image runs around 20 minutes faster than the old
+            workaround.
+          </li>
+          <li>
+            Because capture comes first, the Instagram-style &ldquo;capture
+            first, admin after&rdquo; pattern means fewer clinical moments are
+            lost and patient records land more complete.
+          </li>
+        </ul>
       </section>
 
       <NextProject href="/clinical_pathways" title="Visualising Clinical Pathway Data" />
