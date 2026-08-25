@@ -18,12 +18,12 @@
   --ink-2: #6e6558;
   --ink-3: #9c9184;
 
-  --accent: #196c5d;
-  --accent-strong: #0f5548;
-  --accent-tint: #e4efe9;
+  --accent: #b64a26;
+  --accent-strong: #9e3d1b;
+  --accent-tint: #f7e6dc;
 
-  --sienna: #b64a26;
-  --sienna-tint: #f7e6dc;
+  --sienna: #196c5d;
+  --sienna-tint: #e4efe9;
 }
 
 .dark {
@@ -37,12 +37,12 @@
   --ink-2: #ada192;
   --ink-3: #837868;
 
-  --accent: #5fb39d;
-  --accent-strong: #7cc7b3;
-  --accent-tint: #22382f;
+  --accent: #d98157;
+  --accent-strong: #e59a76;
+  --accent-tint: #3b2a20;
 
-  --sienna: #d98157;
-  --sienna-tint: #3b2a20;
+  --sienna: #5fb39d;
+  --sienna-tint: #22382f;
 }
 
 @theme inline {
@@ -157,39 +157,10 @@ blockquote {
 .anim-delay-3 { animation-delay: 0.28s; }
 .anim-delay-4 { animation-delay: 0.38s; }
 
-@keyframes photo-pop {
-  0% {
-    transform: rotate(-5deg) scale(0.9);
-  }
-  55% {
-    transform: rotate(2deg) scale(1.04);
-  }
-  100% {
-    transform: rotate(0deg) scale(1);
-  }
-}
-
-@keyframes badge-wiggle {
-  0%, 100% { transform: rotate(6deg); }
-  25% { transform: rotate(-4deg); }
-  50% { transform: rotate(8deg); }
-  75% { transform: rotate(-2deg); }
-}
-
-.animate-photo-pop {
-  animation: photo-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.animate-badge-wiggle {
-  animation: badge-wiggle 0.6s ease-in-out;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .anim-rise,
   .anim-settle,
-  .anim-wave,
-  .animate-photo-pop,
-  .animate-badge-wiggle {
+  .anim-wave {
     animation: none;
   }
 }

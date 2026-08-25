@@ -3,64 +3,45 @@ export const site = {
   role: "Product Designer",
   email: "megomahony97@gmail.com",
   linkedin: "https://www.linkedin.com/in/megan-omahony/",
-  url: "https://meganomahony.vercel.app",
-  // TODO: replace with the industrial-design site's real Vercel URL after import
-  physicalPortfolio: "https://industrial-design.vercel.app",
+  // TODO: replace with this site's real Vercel URL after importing the repo
+  url: "https://industrial-design.vercel.app",
+  // TODO: replace with the UI/UX portfolio's real Vercel URL
+  uxPortfolio: "https://portfolio-seven-alpha-xf2or6s8no.vercel.app",
 };
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Case studies", href: "/#case-studies" },
-  { label: "Resume", href: "/cv" },
+  { label: "Work", href: "/#work" },
+  { label: "UX portfolio", href: site.uxPortfolio, external: true },
   { label: "Linkedin", href: site.linkedin, external: true },
   { label: "Email", href: `mailto:${site.email}`, external: true },
 ];
 
-export type CaseStudySummary = {
+export type ProjectSummary = {
   slug: string;
   title: string;
   summary: string;
   tags: string[];
-  imagePlaceholder: string;
-  heroScreens?: string[];
-  heroImage?: { src: string; className: string };
+  imageLabel: string;
 };
 
-export const caseStudies: CaseStudySummary[] = [
+export const projects: ProjectSummary[] = [
   {
-    slug: "quick_submit",
-    title: "A quick way to submit",
+    slug: "transition",
+    title: "Transitions Optical marketing device",
     summary:
-      "I led the redesign of Isla's media capture flow for frontline NHS staff, using persuasive design reducing a 16-step submission process to 7.",
-    tags: ["NHS", "65% adoption rate", "20 min faster to file", "UX flow", "B2B"],
-    imagePlaceholder: "Isla's media capture flow: patient list, capture photo, review items screens",
-    heroScreens: [
-      "/quick-submit/after-01.png",
-      "/quick-submit/after-04.png",
-      "/quick-submit/after-06.png",
-    ],
+      "A portable, illuminated display that brings light-adaptive lenses to life across ski, motorbike, and everyday eyewear.",
+    tags: ["Physical product", "Electronics", "3D printing", "Event display"],
+    imageLabel:
+      "Illuminated Transitions Signature GEN8 stand with a motorbike helmet",
   },
   {
-    slug: "clinical_pathways",
-    title: "Visualising clinical pathways",
+    slug: "lens-alignment",
+    title: "Lens polarisation alignment tool",
     summary:
-      "How I translated dense pathway configuration logic into a visual builder used by NHS clinicians.",
-    tags: ["NHS", "UX flow", "B2B healthtech", "Information architecture"],
-    imagePlaceholder: "Isla waiting list validation pathway visual builder",
-    heroImage: {
-      src: "/clinical-pathways/canvas.png",
-      className: "object-contain p-6",
-    },
-  },
-  {
-    slug: "vocalynx",
-    title: "Vocalynx (Founder)",
-    summary: "Designing a vocal therapy companion for people recovering at home",
-    tags: [],
-    imagePlaceholder: "Vocalynx app screens and vocal therapy device",
-    heroImage: {
-      src: "/vocalynx/hero.png",
-      className: "object-contain p-6",
-    },
+      "A laser-based tool that took lens alignment out of the operator's hands on the production line, lifting first-time success from 64% to 99%.",
+    tags: ["Production tooling", "CAD / SolidWorks", "Manufacturing", "64% → 99%"],
+    imageLabel:
+      "Laser highlighting the polarisation axis of a lens on a 3D-printed stand",
   },
 ];
