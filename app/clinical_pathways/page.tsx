@@ -221,6 +221,17 @@ export default function ClinicalPathwaysPage() {
         </ul>
       </section>
 
+      <section className="mt-14">
+        <h2 className="text-2xl font-semibold">Where I&apos;d take it next</h2>
+        <p className="mt-4 leading-relaxed text-ink/80">
+          The MVP was deliberately built to scale first: a structure that could
+          keep adding nodes and hold up across trusts, before a polished UI.
+          Next I&apos;d take it to client-grade: refining the interface, language
+          and usability by usability-testing the shipped version with builders
+          and clinical leads, and feeding what surfaces back into the canvas.
+        </p>
+      </section>
+
       <NextProject href="/vocalynx" title="Vocalynx" />
     </article>
   );
