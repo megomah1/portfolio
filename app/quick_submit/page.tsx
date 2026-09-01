@@ -161,6 +161,24 @@ export default function QuickSubmitPage() {
           </ul>
         </div>
 
+        <figure className="mt-8 -mx-6 sm:mx-0">
+          <div className="overflow-x-auto rounded-none border-y border-line bg-surface sm:rounded-2xl sm:border">
+            <Image
+              src="/quick-submit/user-journeys.png"
+              alt="Persona-led user journey maps for Sarah (district nurse) and Bill (tissue viability nurse), each broken into journey steps, user journey, experience and opportunities across the wound-care flow"
+              width={2000}
+              height={1263}
+              quality={95}
+              className="w-full min-w-[900px]"
+            />
+          </div>
+          <figcaption className="mt-3 px-6 text-sm text-ink-3 sm:px-0">
+            The output of the research: I turned user stories into persona-led
+            journey maps, rating the experience at each step and marking
+            opportunities. This is what informed the redesigned user flows.
+          </figcaption>
+        </figure>
+
         <div className="mt-8">
           {/* TODO: confirm metric - heading states 9 screens but only 8 before-screenshots are rendered below (beforeScreens has 8 entries). Add the missing screen or correct the count to 8. */}
           <span className="inline-flex items-center rounded-full bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-2">
