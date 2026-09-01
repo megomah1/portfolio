@@ -172,11 +172,6 @@ export default function QuickSubmitPage() {
               className="w-full min-w-[900px]"
             />
           </div>
-          <figcaption className="mt-3 px-6 text-sm text-ink-3 sm:px-0">
-            The output of the research: I turned user stories into persona-led
-            journey maps, rating the experience at each step and marking
-            opportunities. This is what informed the redesigned user flows.
-          </figcaption>
         </figure>
 
         <div className="mt-8">
