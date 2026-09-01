@@ -165,11 +165,11 @@ export default function QuickSubmitPage() {
           <div className="overflow-x-auto rounded-none border-y border-line bg-surface sm:rounded-2xl sm:border">
             <Image
               src="/quick-submit/user-journeys.png"
-              alt="Persona-led user journey maps for Sarah (district nurse) and Bill (tissue viability nurse), each broken into journey steps, user journey, experience and opportunities across the wound-care flow"
-              width={2000}
-              height={1263}
+              alt="User journey map for Sarah, a district nurse, broken into journey steps, user journey, experience and opportunities across the wound-care flow: start of visit, login to Isla, wound check, log existing issue, capture images, log new issue, capture images and confirm consent"
+              width={2600}
+              height={876}
               quality={95}
-              className="w-full min-w-[900px]"
+              className="w-full min-w-[1100px]"
             />
           </div>
         </figure>
