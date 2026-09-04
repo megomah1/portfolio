@@ -20,11 +20,12 @@ const STORE = "clips";
 
 const defaultSettings: Settings = {
   name: "Mona",
+  onboarded: false,
+  hasDevice: false,
   calibrated: false,
   noiseFloor: 0.008,
   inputGain: 1,
   apertureMm: 7,
-  deviceConnected: false,
   dailyGoalMin: 12,
   reminders: [
     { id: "r1", time: "09:00", on: true },
@@ -260,10 +261,12 @@ export function useVocalynxStore() {
   const resetAll = useCallback((mode: "empty" | "sample") => {
     const fresh =
       mode === "sample"
-        ? makeSampleData()
+        ? // Reloading the demo shouldn't force you back through onboarding.
+          { ...makeSampleData(), settings: { ...defaultSettings, onboarded: true } }
         : {
             version: 1,
-            settings: defaultSettings,
+            // A true fresh start replays the first-run setup flow.
+            settings: { ...defaultSettings, onboarded: false },
             sessions: [],
             recordings: [],
             firstRun: new Date().toISOString(),

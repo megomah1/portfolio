@@ -3,7 +3,8 @@
 // on-device (see store.ts). No server, no account — the browser is the source
 // of truth.
 
-export type ScreenId = "today" | "practice" | "record" | "progress";
+// Primary tabs — mirrors the case study's bottom bar.
+export type ScreenId = "today" | "practice" | "record" | "profile";
 
 export type ExerciseCategory = "warmup" | "breath" | "recovery" | "range";
 
@@ -101,16 +102,24 @@ export type Reminder = { id: string; time: string; on: boolean };
 
 export type Settings = {
   name: string;
+  /** Whether the person has completed the first-run setup flow. */
+  onboarded: boolean;
+  /**
+   * Whether the person owns a Vocalynx handheld. Set during onboarding.
+   * The app is fully usable either way — this only tailors the straw
+   * exercises and the aperture guide's wording.
+   */
+  hasDevice: boolean;
   /** Mic calibration completed at least once. */
   calibrated: boolean;
   /** Noise floor captured during calibration, RMS 0..1. */
   noiseFloor: number;
   /** Input sensitivity multiplier the person set, ~0.5..2. */
   inputGain: number;
-  /** Aperture guide target in mm (device feature, optional). */
+  /** Aperture guide target in mm. The Vocalynx is a manual device you twist
+   *  to this diameter; owners set their real band, everyone can use it as a
+   *  visual target. */
   apertureMm: number;
-  /** Simulated pairing state for the physical device. */
-  deviceConnected: boolean;
   reminders: Reminder[];
   /** Prescription: target minutes per day. */
   dailyGoalMin: number;

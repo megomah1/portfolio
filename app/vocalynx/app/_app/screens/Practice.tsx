@@ -1,12 +1,20 @@
 "use client";
 
 import type { Exercise, ExerciseCategory } from "../types";
+import type { Store } from "../store";
 import { categoryLabels, exercises } from "../exercises";
 import { ChevronRight, PlayIcon } from "../viz/icons";
 
 const order: ExerciseCategory[] = ["warmup", "breath", "range", "recovery"];
 
-export default function Practice({ onStart }: { onStart: (ex: Exercise) => void }) {
+export default function Practice({
+  store,
+  onStart,
+}: {
+  store: Store;
+  onStart: (ex: Exercise) => void;
+}) {
+  const hasDevice = store.data?.settings.hasDevice ?? false;
   const grouped = order
     .map((cat) => ({ cat, items: exercises.filter((e) => e.category === cat) }))
     .filter((g) => g.items.length);
@@ -40,7 +48,7 @@ export default function Practice({ onStart }: { onStart: (ex: Exercise) => void 
                     <span className="font-display text-lg font-semibold text-ink">{ex.name}</span>
                     {ex.usesDevice && (
                       <span className="rounded-full bg-line px-2 py-0.5 font-mono text-[9px] uppercase tracking-wide text-ink-2">
-                        device
+                        straw
                       </span>
                     )}
                   </span>
@@ -57,8 +65,9 @@ export default function Practice({ onStart }: { onStart: (ex: Exercise) => void 
       ))}
 
       <p className="mt-6 rounded-xl bg-surface px-4 py-3 text-xs leading-relaxed text-ink-2">
-        Every exercise works with just your phone. The Vocalynx handset adds a physical aperture
-        guide for the straw exercises, but it&apos;s never required.
+        {hasDevice
+          ? "Straw exercises will show the aperture to twist your Vocalynx to. Every exercise also works by ear."
+          : "Every exercise works with just your phone. Straw exercises suggest a straw in a glass of water — a Vocalynx handheld gives a precise aperture, but it's never required."}
       </p>
     </div>
   );

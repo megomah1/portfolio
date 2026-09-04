@@ -8,6 +8,7 @@ import { computeMetrics, healthScore, type FrameSample } from "../metrics";
 import { pitchToUnit, midiToFreq, noteLabel } from "../theory";
 import type { Store } from "../store";
 import Stage, { type StageHandle } from "../viz/Stage";
+import Aperture from "../viz/Aperture";
 import { CheckIcon, CloseIcon, MicIcon } from "../viz/icons";
 
 type Step = "prep" | "countdown" | "running" | "summary";
@@ -46,6 +47,8 @@ export default function Runner({
   const noteElRef = useRef<HTMLSpanElement>(null);
 
   const total = exerciseDuration(exercise);
+  const hasDevice = store.data?.settings.hasDevice ?? false;
+  const apertureMm = store.data?.settings.apertureMm ?? 7;
 
   const cleanup = useCallback(() => {
     cancelAnimationFrame(rafRef.current);
@@ -215,25 +218,64 @@ export default function Runner({
       </div>
 
       {step === "prep" && (
-        <div className="flex flex-1 flex-col items-center justify-center px-8 text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent-tint text-accent">
-            <MicIcon className="!h-7 !w-7" />
+        <div className="flex flex-1 flex-col">
+          <div className="flex-1 overflow-y-auto px-6 py-6">
+            <div className="flex min-h-full flex-col items-center justify-center text-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent-tint text-accent">
+                <MicIcon className="!h-7 !w-7" />
+              </div>
+              <h2 className="mt-5 font-display text-2xl font-semibold">{exercise.name}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-ink-2">{exercise.blurb}</p>
+
+              {exercise.usesDevice && (
+                <div className="mt-6 w-full rounded-2xl border border-line bg-surface p-4">
+                  <p className="font-mono text-[11px] uppercase tracking-wide text-accent">
+                    {hasDevice ? "Twist your device to →" : "Straw setup · optional"}
+                  </p>
+                  <div className="mt-2 flex justify-center">
+                    <Aperture mm={apertureMm} />
+                  </div>
+                  <p className="mt-2 font-display text-2xl font-semibold text-accent">
+                    {apertureMm.toFixed(1)} mm
+                  </p>
+                  <div className="mt-3 flex justify-center gap-2">
+                    {[3, 5, 7, 9].map((mm) => (
+                      <button
+                        key={mm}
+                        onClick={() => store.updateSettings({ apertureMm: mm })}
+                        className={`h-9 w-9 rounded-full font-mono text-sm ${
+                          apertureMm === mm ? "bg-accent text-paper" : "border border-line text-ink-2"
+                        }`}
+                      >
+                        {mm}
+                      </button>
+                    ))}
+                  </div>
+                  <p className="mt-3 text-[11px] leading-relaxed text-ink-3">
+                    {hasDevice
+                      ? "Set the band above, then begin."
+                      : "No handheld? Hum through any straw in a glass of water — or just hum gently. No device needed."}
+                  </p>
+                </div>
+              )}
+
+              <p className="mt-4 text-xs leading-relaxed text-ink-3">
+                We&apos;ll listen through your microphone to guide the exercise and measure how
+                steady your voice is. Nothing leaves your device.
+              </p>
+            </div>
           </div>
-          <h2 className="mt-5 font-display text-2xl font-semibold">{exercise.name}</h2>
-          <p className="mt-2 text-sm leading-relaxed text-ink-2">{exercise.blurb}</p>
-          <p className="mt-4 text-xs leading-relaxed text-ink-3">
-            We&apos;ll listen through your microphone to guide the exercise and measure how steady
-            your voice is. Nothing leaves your device.
-          </p>
-          <button
-            onClick={begin}
-            className="mt-8 w-full rounded-full bg-accent py-3.5 font-medium text-paper transition-transform active:scale-[0.98]"
-          >
-            Begin
-          </button>
-          <p className="mt-3 font-mono text-[11px] uppercase tracking-widest text-ink-3">
-            {Math.round(total / 60)} min · {exercise.phases.length} steps
-          </p>
+          <div className="px-6 pb-6">
+            <button
+              onClick={begin}
+              className="w-full rounded-full bg-accent py-3.5 font-medium text-paper transition-transform active:scale-[0.98]"
+            >
+              Begin
+            </button>
+            <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-widest text-ink-3">
+              {Math.round(total / 60)} min · {exercise.phases.length} steps
+            </p>
+          </div>
         </div>
       )}
 

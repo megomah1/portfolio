@@ -81,6 +81,17 @@ export const CloseIcon = ({ className }: P) =>
 
 export const ChevronRight = ({ className }: P) => svg(<path d="M9 5l7 7-7 7" />, className);
 
+export const BackIcon = ({ className }: P) => svg(<path d="M15 5l-7 7 7 7" />, className);
+
+export const UserIcon = ({ className }: P) =>
+  svg(
+    <>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" />
+    </>,
+    className
+  );
+
 export const TrashIcon = ({ className }: P) =>
   svg(
     <>

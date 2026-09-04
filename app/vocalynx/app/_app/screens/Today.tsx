@@ -11,12 +11,12 @@ export default function Today({
   store,
   onStart,
   onGoTo,
-  onCalibrate,
+  onOpenReport,
 }: {
   store: Store;
   onStart: (ex: Exercise) => void;
   onGoTo: (s: ScreenId) => void;
-  onCalibrate: () => void;
+  onOpenReport: () => void;
 }) {
   const data = store.data;
   if (!data) return null;
@@ -93,7 +93,7 @@ export default function Today({
 
       {/* Snapshot */}
       <button
-        onClick={() => onGoTo("progress")}
+        onClick={onOpenReport}
         className="mt-5 flex items-center justify-between rounded-2xl border border-line bg-surface p-4 text-left"
       >
         <div>
@@ -129,7 +129,7 @@ export default function Today({
           <span className="text-xs text-ink-2">Log how you sound today</span>
         </button>
         <button
-          onClick={() => onGoTo("progress")}
+          onClick={onOpenReport}
           className="flex flex-col items-start gap-2 rounded-2xl border border-line bg-surface p-4"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-tint text-accent">
@@ -139,20 +139,6 @@ export default function Today({
           <span className="text-xs text-ink-2">See how you&apos;re healing</span>
         </button>
       </div>
-
-      {/* Device (secondary, optional) */}
-      <button
-        onClick={onCalibrate}
-        className="mt-3 flex items-center justify-between rounded-2xl border border-dashed border-line px-4 py-3 text-left"
-      >
-        <div>
-          <p className="text-sm font-medium text-ink">Calibrate & device</p>
-          <p className="text-xs text-ink-2">
-            {settings.calibrated ? "Mic calibrated" : "Optional — works without the device"}
-          </p>
-        </div>
-        <ChevronRight className="text-ink-3" />
-      </button>
     </div>
   );
 }
