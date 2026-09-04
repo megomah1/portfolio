@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import StatBlock from "@/components/StatBlock";
 import NextProject from "@/components/NextProject";
 
@@ -105,6 +106,29 @@ export default function VocalynxPage() {
           className="w-full"
         />
       </div>
+
+      <Link
+        href="/vocalynx/app"
+        className="group mt-8 flex items-center justify-between gap-4 rounded-2xl border border-accent bg-accent-tint/50 px-6 py-5 transition-colors hover:bg-accent-tint"
+      >
+        <div>
+          <p className="font-mono text-xs uppercase tracking-widest text-accent">
+            Interactive prototype
+          </p>
+          <p className="mt-1 font-display text-xl font-semibold text-ink">
+            Try the working Vocalynx app
+          </p>
+          <p className="mt-1 text-sm text-ink-2">
+            Live vocal + breathing visuals, a voice log and a vocal-health report — in your browser.
+          </p>
+        </div>
+        <span
+          aria-hidden
+          className="text-2xl text-accent transition-transform duration-200 group-hover:translate-x-1"
+        >
+          →
+        </span>
+      </Link>
 
       <section className="mt-14 border-t border-line pt-12">
         <h2 className="text-2xl font-semibold">Challenge</h2>
